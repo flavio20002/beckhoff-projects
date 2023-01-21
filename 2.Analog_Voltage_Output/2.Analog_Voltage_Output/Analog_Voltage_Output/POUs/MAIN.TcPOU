@@ -9,7 +9,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[GVL.bAnalog_Outputs[1] := REAL_TO_INT(rWriteAnalog1/10*32767);
-GVL.bAnalog_Outputs[1] := REAL_TO_INT(rWriteAnalog2/10*32767);]]></ST>
+GVL.bAnalog_Outputs[2] := REAL_TO_INT(rWriteAnalog2/10*32767);]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

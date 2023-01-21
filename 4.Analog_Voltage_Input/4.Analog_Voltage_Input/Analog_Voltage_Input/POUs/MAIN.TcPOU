@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{51e18e0a-bf97-43bb-bd25-74158815971f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	rReadAnalog1 : REAL;
+	rReadAnalog2 : REAL;
+	rReadAnalog3 : REAL;
+	rReadAnalog4 : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rReadAnalog1 := INT_TO_REAL(GVL.bAnalog_Inputs[1])/32767*10;
+rReadAnalog2 := INT_TO_REAL(GVL.bAnalog_Inputs[2])/32767*10;
+rReadAnalog3 := INT_TO_REAL(GVL.bAnalog_Inputs[3])/32767*10;
+rReadAnalog4 := INT_TO_REAL(GVL.bAnalog_Inputs[4])/32767*10;
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="9" Count="0" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
