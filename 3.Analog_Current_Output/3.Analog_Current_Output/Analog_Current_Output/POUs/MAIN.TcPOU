@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{e589d767-5060-4f5a-94e2-37fc12fad615}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	rWriteAnalog1 : REAL;
+	rWriteAnalog2 : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL.bAnalog_Outputs[1] := REAL_TO_INT((rWriteAnalog1-4)/16*32767);
+GVL.bAnalog_Outputs[2] := REAL_TO_INT((rWriteAnalog2-4)/16*32767);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="8" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
