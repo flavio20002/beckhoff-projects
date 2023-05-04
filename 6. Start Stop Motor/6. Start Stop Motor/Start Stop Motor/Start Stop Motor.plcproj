@@ -17,6 +17,9 @@
     <LibraryReferences>{23779940-dde0-41f9-bb12-438f16b4ca52}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\ST_MC_Cmd.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_MC_Status.TcDUT">
       <SubType>Code</SubType>
     </Compile>

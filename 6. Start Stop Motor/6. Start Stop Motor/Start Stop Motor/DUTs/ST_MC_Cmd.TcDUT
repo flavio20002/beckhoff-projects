@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_MC_Cmd" Id="{2bff0c53-1fac-4611-9955-659818881cf9}">
+    <Declaration><![CDATA[TYPE ST_MC_Cmd :
+STRUCT
+	bExe			: BOOL;
+	lrVelocity		: LREAL;
+	lrAcceleration	: LREAL;
+	lrDeceleretion	: LREAL;
+	lrJerk			: LREAL;
+	lrDistance		: LREAL;
+	lrPosition		: LREAL;
+	EnuDirection	: MC_Direction;
+	EnuBufferMode	: MC_BufferMode;
+	EnuOptions		: ST_MoveOptions;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

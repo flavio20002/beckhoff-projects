@@ -6,12 +6,15 @@ VAR_GLOBAL
 	bDigital_Inputs AT %I* : ARRAY[1..8] OF BOOL;
 	bDigital_Outputs AT %Q* : ARRAY[1..8] OF BOOL;
 	
+	// Single Axis 'SA'
 	singleAxis : AXIS_REF;
 	
+	// Motion Control Function Block instance variable 'fbSA'
 	fbSA_Reset				: MC_RESET;
 	fbSA_Power				: MC_POWER;
 	fbSA_Home				: MC_HOME;
 	fbSA_Jog				: MC_JOG;
+	fbSA_Vel1				: MC_MoveVelocity;
 	
 	bSA_ResetExe			: BOOL;
 	bSA_PowerEnCmd			: BOOL;
@@ -24,6 +27,13 @@ VAR_GLOBAL
 	bSA_JogFwd				: BOOL;
 	bSA_JogRev				: BOOL;
 	
+	stSA_VelCmd1			: ST_MC_Cmd;
+	stSA_VelCmd2			: ST_MC_Cmd;
+	stSA_RelCmd1			: ST_MC_Cmd;
+	stSA_RelCmd2			: ST_MC_Cmd;
+	stSA_AbsCmd1			: ST_MC_Cmd;
+	stSA_AbsCmd2			: ST_MC_Cmd;
+	
 	lrSA_PowerOverride		: LREAL;
 	lrSA_HomePosition		: LREAL;
 	lrSA_SetPosition		: LREAL;
@@ -34,6 +44,13 @@ VAR_GLOBAL
 	stSA_Home				: ST_MC_Status;
 	stSA_SetPosition		: ST_MC_Status;
 	stSA_Jog				: ST_MC_Status;
+	
+	stSA_VelSts1			: ST_MC_Status;
+	stSA_VelSts2			: ST_MC_Status;
+	stSA_RelSts1			: ST_MC_Status;
+	stSA_RelSts2			: ST_MC_Status;
+	stSA_AbsSts1			: ST_MC_Status;
+	stSA_AbsSts2			: ST_MC_Status;
 	
 END_VAR]]></Declaration>
   </GVL>
