@@ -2,35 +2,25 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5813e0e6-3580-4784-829e-cff0adc68a6d}</ProjectGuid>
+    <ProjectGuid>{293519f3-c445-43ca-8a70-7372bfb801e7}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>Start_Stop_Motor</Name>
-    <ProgramVersion>3.1.4023.0</ProgramVersion>
-    <Application>{fc9d9f38-5edc-4328-81de-fd9572c840c3}</Application>
-    <TypeSystem>{f16c0ec5-cd99-4d83-abdd-85f4e5b8464d}</TypeSystem>
-    <Implicit_Task_Info>{0c1ed6e4-0ddd-4c1a-a523-6f1fecce8a40}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{57afa326-08da-48a9-841c-bae246caf65d}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{1f7a7c7e-14ab-4792-a703-0e4aa8613954}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{23779940-dde0-41f9-bb12-438f16b4ca52}</LibraryReferences>
+    <Name>MC</Name>
+    <ProgramVersion>3.1.4024.0</ProgramVersion>
+    <Application>{a6d559fe-744a-4702-9757-3ccb5eea3782}</Application>
+    <TypeSystem>{f7185db1-c6a6-4594-a136-b135f65678fe}</TypeSystem>
+    <Implicit_Task_Info>{cd5a2d70-37ae-4167-9873-7a3bbbcce579}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{ca3f4502-5307-48e5-b39f-7929ea141b06}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{2ee178af-e829-497f-a28d-71bd48fd890a}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{dbb738f9-a7e0-43d3-841c-a99d8003e959}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\ST_MC_Status.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GVLs\GVL_SA.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Motion.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -41,14 +31,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="Tc2_MC2">
-      <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
-      <Namespace>Tc2_MC2</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="Tc2_MC2_Drive">
-      <DefaultResolution>Tc2_MC2_Drive, * (Beckhoff Automation GmbH)</DefaultResolution>
-      <Namespace>Tc2_MC2_Drive</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -62,16 +44,11 @@
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Start Stop Motor.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -92,13 +69,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
