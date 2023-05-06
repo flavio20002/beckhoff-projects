@@ -6,7 +6,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Motion.StartStop();]]></ST>
+      <ST><![CDATA[Motion.StartStop();
+Motion.SingleAxis_LD();]]></ST>
     </Implementation>
     <Method Name="SingleAxis_LD" Id="{0fe1655e-c708-44a8-83ca-6f5316c5a4da}">
       <Declaration><![CDATA[METHOD SingleAxis_LD : BOOL
@@ -21,19 +22,6 @@ END_VAR
                 <v n="NetworkListComment">""</v>
                 <v n="DefaultViewMode">"Ld"</v>
                 <l2 n="NetworkList" cet="Network">
-                  <o>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
-                    <v n="Label">""</v>
-                    <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" />
-                    <l2 n="Connectors" />
-                    <v n="Id">6L</v>
-                  </o>
                   <o>
                     <v n="ILActive">false</v>
                     <v n="FBDValid">false</v>
@@ -2943,6 +2931,7 @@ END_VAR
     </Method>
     <LineIds Name="Motion">
       <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
