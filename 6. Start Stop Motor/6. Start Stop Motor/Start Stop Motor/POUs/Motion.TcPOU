@@ -242,7 +242,7 @@ END_VAR
 END_TYPE"</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -565,7 +565,7 @@ MC_ResetCalibration
 Resets the calibration state of the axis. No movement takes place, and the position remains unchanged."</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -897,7 +897,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -1271,7 +1271,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -1645,7 +1645,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -2019,7 +2019,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -2393,7 +2393,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                     <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">true</v>
+                    <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
