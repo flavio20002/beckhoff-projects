@@ -14,7 +14,12 @@ VAR_GLOBAL
 	fbSA_Power				: MC_POWER;
 	fbSA_Home				: MC_HOME;
 	fbSA_Jog				: MC_JOG;
-	fbSA_Vel1				: MC_MoveVelocity;
+	fbSA_MoveVel1			: MC_MoveVelocity;
+	fbSA_MoveVel2			: MC_MoveVelocity;
+	fbSA_MoveRel1			: MC_MoveRelative;
+	fbSA_MoveRel2			: MC_MoveRelative;
+	fbSA_MoveAbs1			: MC_MoveAbsolute;
+	fbSA_MoveAbs2			: MC_MoveAbsolute;
 	
 	bSA_ResetExe			: BOOL;
 	bSA_PowerEnCmd			: BOOL;
