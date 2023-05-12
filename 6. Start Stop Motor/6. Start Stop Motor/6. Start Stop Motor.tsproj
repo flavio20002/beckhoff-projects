@@ -1847,7 +1847,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{5813E0E6-3580-4784-829E-CFF0ADC68A6D}" Name="Start Stop Motor" PrjFilePath="Start Stop Motor\Start Stop Motor.plcproj" TmcFilePath="Start Stop Motor\Start Stop Motor.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Start Stop Motor\Start Stop Motor.tmc" TmcHash="{FDDA1376-BF1D-5856-5AF1-DF7B1BB71B39}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Start Stop Motor\Start Stop Motor.tmc" TmcHash="{59430178-915F-1787-B2DA-991B251D86DF}">
 					<Name>Start Stop Motor Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
