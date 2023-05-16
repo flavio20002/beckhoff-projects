@@ -2933,7 +2933,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"LREAL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -2952,7 +2952,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"LREAL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -2971,7 +2971,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"MC_BufferMode"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -2990,7 +2990,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"ST_MoveOptions"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -3244,7 +3244,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"LREAL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -3263,7 +3263,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"LREAL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -3282,7 +3282,7 @@ Resets the calibration state of the axis. No movement takes place, and the posit
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"???"</v>
+                                <v n="Operand">""</v>
                                 <v n="Type">"ST_MoveOptions"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
