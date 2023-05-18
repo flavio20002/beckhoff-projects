@@ -1,13 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <POU Name="MAIN" Id="{204bbc62-1769-42bb-8b48-0dfa2fe581ab}">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{204bbc62-1769-42bb-8b48-0dfa2fe581ab}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	fbSR : SR;
 END_VAR
-]]>
-    </Declaration>
+]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[fbSR(SET1:= GVL.bDigital_Inputs[1], RESET:= GVL.bDigital_Inputs[2]);
+GVL.bDigital_Outputs[1] := fbSR.Q1;]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="12" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
