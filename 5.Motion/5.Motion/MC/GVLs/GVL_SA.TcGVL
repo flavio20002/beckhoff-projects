@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_SA" Id="{2ce92098-11cc-475c-b4a5-549bffeae7b7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	bDigital_Inputs AT %I* : ARRAY[1..8] OF BOOL;
+	bDigital_Outputs AT %Q* : ARRAY[1..8] OF BOOL;
+	
+	// Single Axis 'SA'
+	singleAxis : AXIS_REF;
+	
+	// Motion Control Function Block instance variable 'fbSA'
+	fbSA_Reset				: MC_RESET;
+	fbSA_Power				: MC_POWER;
+	fbSA_Home				: MC_HOME;
+	fbSA_Jog				: MC_JOG;
+	fbSA_MoveVel1			: MC_MoveVelocity;
+	fbSA_MoveVel2			: MC_MoveVelocity;
+	fbSA_MoveRel1			: MC_MoveRelative;
+	fbSA_MoveRel2			: MC_MoveRelative;
+	fbSA_MoveAbs1			: MC_MoveAbsolute;
+	fbSA_MoveAbs2			: MC_MoveAbsolute;
+	fbSA_Stop				: MC_Stop;
+	fbSA_Halt				: MC_Halt;
+	
+	bSA_ResetExe			: BOOL;
+	bSA_PowerEnCmd			: BOOL := TRUE;
+	bSA_PowerEnPositive		: BOOL := TRUE;
+	bSA_PowerEnNegative		: BOOL := TRUE;
+	
+	bSA_HomeExe				: BOOL;
+	bSA_HomeCamInput		: BOOL;
+	
+	bSA_JogFwd				: BOOL;
+	bSA_JogRev				: BOOL;
+	
+	bSA_Halt_Exe			: BOOL;
+	bSA_Stop_Exe			: BOOL;
+	
+	stSA_VelCmd1			: ST_MC_Cmd;
+	stSA_VelCmd2			: ST_MC_Cmd;
+	stSA_RelCmd1			: ST_MC_Cmd;
+	stSA_RelCmd2			: ST_MC_Cmd;
+	stSA_AbsCmd1			: ST_MC_Cmd;
+	stSA_AbsCmd2			: ST_MC_Cmd;
+	
+	lrSA_PowerOverride		: LREAL := 100;
+	lrSA_HomePosition		: LREAL;
+	lrSA_SetPosition		: LREAL;
+	lrSA_JogVelocity		: LREAL;
+	
+	stSA_Reset				: ST_MC_Status;
+	stSA_Power				: ST_MC_Status;
+	stSA_Home				: ST_MC_Status;
+	stSA_SetPosition		: ST_MC_Status;
+	stSA_Jog				: ST_MC_Status;
+	
+	stSA_VelSts1			: ST_MC_Status;
+	stSA_VelSts2			: ST_MC_Status;
+	stSA_RelSts1			: ST_MC_Status;
+	stSA_RelSts2			: ST_MC_Status;
+	stSA_AbsSts1			: ST_MC_Status;
+	stSA_AbsSts2			: ST_MC_Status;
+	
+	stSA_Halt				: ST_MC_Status;
+	stSA_Stop				: ST_MC_Status;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
