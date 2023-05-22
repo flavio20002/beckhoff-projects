@@ -3456,8 +3456,31 @@ END_VAR
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" cet="BoxTreeAssign">
-                      <o>
+                    <l2 n="NetworkItems">
+                      <o t="BoxTreeDemux">
+                        <v n="VarId">1</v>
+                        <o n="Input" t="BoxTreeOperand">
+                          <o n="Operand" t="Operand">
+                            <v n="Operand">"GVL_SA.bDigital_Inputs[1]"</v>
+                            <v n="Type">"BOOL"</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">true</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">false</v>
+                            <v n="Boolean">true</v>
+                            <v n="IsInstance">false</v>
+                            <v n="Id">7L</v>
+                          </o>
+                          <v n="Id">6L</v>
+                        </o>
+                        <v n="Id">48L</v>
+                      </o>
+                      <o t="BoxTreeAssign">
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
@@ -3483,26 +3506,45 @@ END_VAR
                           <v n="Fixed">false</v>
                           <v n="Extensible">false</v>
                         </o>
-                        <o n="RValue" t="BoxTreeOperand">
-                          <o n="Operand" t="Operand">
-                            <v n="Operand">"GVL_SA.bDigital_Inputs[1]"</v>
-                            <v n="Type">"BOOL"</v>
-                            <v n="Comment">""</v>
-                            <v n="SymbolComment">""</v>
-                            <v n="Address">""</v>
-                            <o n="Flags" t="Flags">
-                              <v n="Flags">0</v>
-                              <v n="Fixed">true</v>
-                              <v n="Extensible">false</v>
-                            </o>
-                            <v n="LValue">false</v>
-                            <v n="Boolean">true</v>
-                            <v n="IsInstance">false</v>
-                            <v n="Id">7L</v>
-                          </o>
-                          <v n="Id">6L</v>
+                        <o n="RValue" t="BoxTreeDemux">
+                          <v n="VarId">1</v>
+                          <n n="Input" />
+                          <v n="Id">49L</v>
                         </o>
                         <v n="Id">42L</v>
+                      </o>
+                      <o t="BoxTreeAssign">
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems" cet="Operand">
+                            <o>
+                              <v n="Operand">"GVL_SA.bDigital_Outputs[1]"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">2</v>
+                                <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">true</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">51L</v>
+                            </o>
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <o n="RValue" t="BoxTreeDemux">
+                          <v n="VarId">1</v>
+                          <n n="Input" />
+                          <v n="Id">50L</v>
+                        </o>
+                        <v n="Id">52L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
@@ -3517,8 +3559,31 @@ END_VAR
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" cet="BoxTreeAssign">
-                      <o>
+                    <l2 n="NetworkItems">
+                      <o t="BoxTreeDemux">
+                        <v n="VarId">3</v>
+                        <o n="Input" t="BoxTreeOperand">
+                          <o n="Operand" t="Operand">
+                            <v n="Operand">"GVL_SA.bDigital_Inputs[2]"</v>
+                            <v n="Type">"BOOL"</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">true</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">false</v>
+                            <v n="Boolean">true</v>
+                            <v n="IsInstance">false</v>
+                            <v n="Id">12L</v>
+                          </o>
+                          <v n="Id">11L</v>
+                        </o>
+                        <v n="Id">53L</v>
+                      </o>
+                      <o t="BoxTreeAssign">
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
@@ -3544,42 +3609,14 @@ END_VAR
                           <v n="Fixed">false</v>
                           <v n="Extensible">false</v>
                         </o>
-                        <o n="RValue" t="BoxTreeOperand">
-                          <o n="Operand" t="Operand">
-                            <v n="Operand">"GVL_SA.bDigital_Inputs[2]"</v>
-                            <v n="Type">"BOOL"</v>
-                            <v n="Comment">""</v>
-                            <v n="SymbolComment">""</v>
-                            <v n="Address">""</v>
-                            <o n="Flags" t="Flags">
-                              <v n="Flags">0</v>
-                              <v n="Fixed">true</v>
-                              <v n="Extensible">false</v>
-                            </o>
-                            <v n="LValue">false</v>
-                            <v n="Boolean">true</v>
-                            <v n="IsInstance">false</v>
-                            <v n="Id">12L</v>
-                          </o>
-                          <v n="Id">11L</v>
+                        <o n="RValue" t="BoxTreeDemux">
+                          <v n="VarId">3</v>
+                          <n n="Input" />
+                          <v n="Id">54L</v>
                         </o>
                         <v n="Id">44L</v>
                       </o>
-                    </l2>
-                    <l2 n="Connectors" />
-                    <v n="Id">10L</v>
-                  </o>
-                  <o>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
-                    <v n="Label">""</v>
-                    <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" cet="BoxTreeAssign">
-                      <o>
+                      <o t="BoxTreeAssign">
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
@@ -3589,14 +3626,14 @@ END_VAR
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
+                                <v n="Flags">3</v>
+                                <v n="Fixed">true</v>
                                 <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">true</v>
                               <v n="Boolean">true</v>
                               <v n="IsInstance">false</v>
-                              <v n="Id">21L</v>
+                              <v n="Id">56L</v>
                             </o>
                           </l2>
                         </o>
@@ -3605,39 +3642,26 @@ END_VAR
                           <v n="Fixed">false</v>
                           <v n="Extensible">false</v>
                         </o>
-                        <o n="RValue" t="BoxTreeOperand">
-                          <o n="Operand" t="Operand">
-                            <v n="Operand">"GVL_SA.singleAxis.Status.Moving"</v>
-                            <v n="Type">"BOOL"</v>
-                            <v n="Comment">""</v>
-                            <v n="SymbolComment">""</v>
-                            <v n="Address">""</v>
-                            <o n="Flags" t="Flags">
-                              <v n="Flags">0</v>
-                              <v n="Fixed">true</v>
-                              <v n="Extensible">false</v>
-                            </o>
-                            <v n="LValue">false</v>
-                            <v n="Boolean">true</v>
-                            <v n="IsInstance">false</v>
-                            <v n="Id">20L</v>
-                          </o>
-                          <v n="Id">19L</v>
+                        <o n="RValue" t="BoxTreeDemux">
+                          <v n="VarId">3</v>
+                          <n n="Input" />
+                          <v n="Id">55L</v>
                         </o>
-                        <v n="Id">22L</v>
+                        <v n="Id">57L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
-                    <v n="Id">18L</v>
+                    <v n="Id">10L</v>
                   </o>
                 </l2>
-                <v n="BranchCounter">0</v>
+                <v n="BranchCounter">3</v>
                 <v n="ValidIds">true</v>
               </o>
             </Data>
             <TypeList>
               <Type n="Boolean">System.Boolean</Type>
               <Type n="BoxTreeAssign">{9873c309-1f09-4ebf-9078-42d8057ef11b}</Type>
+              <Type n="BoxTreeDemux">{b1d55618-017c-4bc5-990a-55c2f27d9d3a}</Type>
               <Type n="BoxTreeOperand">{9de7f100-1b87-424c-a62e-45b0cfc85ed2}</Type>
               <Type n="Flags">{668066f2-6069-46b3-8962-8db8d13d7db2}</Type>
               <Type n="Int32">System.Int32</Type>
