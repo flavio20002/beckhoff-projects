@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN_2" Id="{0f2bedc6-1dcf-469e-aaf2-78b3082ce594}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN_2
+VAR
+	test2	: DINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[test2:=test2+1;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN_2">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
