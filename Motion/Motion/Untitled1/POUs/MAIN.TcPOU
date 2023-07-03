@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{3bfc9037-5bfd-455d-a6fb-465065dbe6e5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	Enable_Axis1: BOOL;
+	Enable_Axis2: BOOL;
+	Move_Axis1 : BOOL;
+	Move_Axis2 : BOOL;
+	Abilita_Axis1 : MC_Power;
+	Abilita_Axis2 : MC_Power;
+	Muovi_Axis1 : MC_MoveRelative;
+	Muovi_Axis2 : MC_MoveRelative;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Abilita_Assi();
+Muovi_Assi();]]></ST>
+    </Implementation>
+    <Action Name="Abilita_Assi" Id="{aa482131-6bed-4b0b-b110-03855a53b825}">
+      <Implementation>
+        <ST><![CDATA[Abilita_Axis1(
+	Axis:= GVL.Axis1, 
+	Enable:= Enable_Axis1, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= 100);
+
+Abilita_Axis2(
+	Axis:= GVL.Axis2, 
+	Enable:= Enable_Axis2, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= 100);
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Muovi_Assi" Id="{f18f75f2-ef74-4fa5-9fa2-5513e7a87f91}">
+      <Implementation>
+        <ST><![CDATA[Muovi_Axis1(
+	Axis:= GVL.Axis1, 
+	Execute:= Move_Axis1, 
+	Distance:= 3600, 
+	Velocity:= 9000 );
+	
+Muovi_Axis1(
+	Axis:= GVL.Axis2, 
+	Execute:= Move_Axis2, 
+	Distance:= 3600, 
+	Velocity:= 9000 );]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="MAIN">
+      <LineId Id="7" Count="0" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Abilita_Assi">
+      <LineId Id="2" Count="4" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="17" Count="5" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Muovi_Assi">
+      <LineId Id="2" Count="3" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="19" Count="3" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

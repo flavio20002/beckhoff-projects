@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="FB_Sample_Sub3_MethodExtended" Id="{c32f3422-a7f1-4c00-9520-5c669ccf39c9}" SpecialFunc="None">
+    <Declaration><![CDATA[(* ===========================================================================================================================================
+   Sub FB/class 3
+   ===========================================================================================================================================
+   Description:
+   This FB extends the base class "FB_Sample_Base". It inherits the basic implementations from the base class.
+   In addition, this FB could contain further, additional variable declarations and methods/properties.
+
+   The method "Calculate" of the base class is EXTENDED in this sub class, as the method is explicitly added to this FB
+   and as the base implementation of the method is called via SUPER pointer (SUPER^.Calculate(...)).
+		
+   Therefore, when calling the method "Calculate" for an instance of this sub class,
+   the basic implementations, that are defined in the base class, are executed for the instance of this sub class (due to the SUPER call)
+   and additionally, the further statements are executed for this instance.
+   =========================================================================================================================================== *)
+FUNCTION_BLOCK FB_Sample_Sub3_MethodExtended EXTENDS FB_Sample_Base
+VAR
+	// maybe any further variable declarations
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Calculate" Id="{65b647a6-d752-4c8b-b7ea-b26eedacf588}">
+      <Declaration><![CDATA[METHOD Calculate : INT
+VAR_INPUT
+	nIn1	: INT;
+	nIn2	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Calculate := SUPER^.Calculate(nIn1 := nIn1, nIn2 := nIn2) / nIn1;
+
+(* 
+- FB_Sample_Sub1_MethodNotChanged:
+		The method "Calculate" of the base class is USED WITHOUT ANY CHANGE in this sub class,
+		as the method is NOT explicitly added to this FB.
+		
+		Therefore, when calling the method "Calculate" for an instance of this sub class,
+		the basic implementations, that are defined in the base class, are executed for the instance of this sub class.
+
+- FB_Sample_Sub2_MethodOverwritten:
+		The method "Calculate" of the base class is OVERWRITTEN in this sub class,
+		as the method is explicitly added to this FB
+		and as the base implementation of the method is NOT called via SUPER pointer.
+		
+		Therefore, when calling the method "Calculate" for an instance of this sub class,
+		a (maybe completely) different implementation is called - than if calling the method for an instance of the base class. 
+		
+- FB_Sample_Sub3_MethodExtended:
+		The method "Calculate" of the base class is EXTENDED in this sub class,
+		as the method is explicitly added to this FB
+		and as the base implementation of the method is called via SUPER pointer (SUPER^.Calculate(...)).
+		
+		Therefore, when calling the method "Calculate" for an instance of this sub class,
+		the basic implementations, that are defined in the base class, are executed for the instance of this sub class (due to the SUPER call)
+		and additionally, the further statements are executed for this instance.
+*)]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="MaybeAnyFurtherMethods" Id="{6bb4f101-3048-4553-872d-761c219b29c7}">
+      <Declaration><![CDATA[METHOD MaybeAnyFurtherMethods
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Sample_Sub3_MethodExtended">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Sub3_MethodExtended.Calculate">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="24" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Sub3_MethodExtended.MaybeAnyFurtherMethods">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

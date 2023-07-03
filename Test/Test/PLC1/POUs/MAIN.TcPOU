@@ -9,13 +9,23 @@ VAR
 	ao1 AT %Q* : INT;
 	tmp1 AT %M* : REAL;
 	counter : DINT; // 32 bit con segno
+	trigger : R_TRIG;
+	trigger1 : FB_Trigger;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[counter := counter + 1;]]></ST>
+      <ST><![CDATA[counter := counter + 1;
+
+trigger(CLK:= di1, Q=> );
+trigger1(CLK:= di1, Q=> );
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="20" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="FB_Sample_Sub1_MethodNotChanged" Id="{6d2975c1-ff2c-4052-b7ba-a5cbaec9176f}" SpecialFunc="None">
+    <Declaration><![CDATA[(* ===========================================================================================================================================
+   Sub FB/class 1
+   ===========================================================================================================================================
+   Description:
+   This FB extends the base class "FB_Sample_Base". It inherits the basic implementations from the base class.
+   In addition, this FB could contain further, additional variable declarations and methods/properties.
+
+   The method "Calculate" of the base class is USED WITHOUT ANY CHANGE in this sub class, as the method is NOT explicitly added to this FB.
+   
+   Therefore, when calling the method "Calculate" for an instance of this sub class,
+   the basic implementations, that are defined in the base class, are executed for the instance of this sub class.  
+   =========================================================================================================================================== *)
+FUNCTION_BLOCK FB_Sample_Sub1_MethodNotChanged EXTENDS FB_Sample_Base
+VAR
+	// maybe any further variable declarations
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="MaybeAnyFurtherMethods" Id="{40ed0f5c-ceea-4e5e-8afc-c5fd5543744a}">
+      <Declaration><![CDATA[METHOD MaybeAnyFurtherMethods
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Sample_Sub1_MethodNotChanged">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Sub1_MethodNotChanged.MaybeAnyFurtherMethods">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="FB_Sample_Base" Id="{3bd7b26d-f8ab-450c-ae2f-8ae59a2d67a3}" SpecialFunc="None">
+    <Declaration><![CDATA[(* =========================================================================================================================
+   Base FB/class
+   =========================================================================================================================
+   Description:
+   This base class contains/provides some basic functionalities:
+   - implementation of the interface "I_Sample"
+   - basic implementation of the method called "Calculate" (in this case, the sum of two input parameters is returned)
+   - ID handling via a property and a local variable to provide an object of this class with an ID
+        - nObjectID.Get to read the ID of an object
+        - nObjectID.Set to write the ID of an object
+   ========================================================================================================================= *)
+FUNCTION_BLOCK FB_Sample_Base IMPLEMENTS I_Sample
+VAR
+	nID		: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Calculate" Id="{00d54ebb-025d-42b4-af18-944c5fc0a7ce}">
+      <Declaration><![CDATA[METHOD Calculate : INT
+VAR_INPUT
+	nIn1	: INT;
+	nIn2	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Calculate := nIn1 + nIn2;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="nObjectID" Id="{84944678-0099-4b7f-b981-1d96e05b5e55}">
+      <Declaration><![CDATA[PROPERTY nObjectID : INT]]></Declaration>
+      <Get Name="Get" Id="{63ed9b03-7f0b-44c4-91c4-df706795149c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[nObjectID := nID;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{c9a0260a-7617-4465-969d-208aa1cec17f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF nObjectID > 0 THEN
+	 nID := nObjectID;
+END_IF]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_Sample_Base">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Base.Calculate">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Base.nObjectID.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Base.nObjectID.Set">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

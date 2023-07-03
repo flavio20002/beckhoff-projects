@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="FB_Sample_Sub2_MethodOverwritten" Id="{1588b41e-5999-4150-8337-2f3351c593eb}" SpecialFunc="None">
+    <Declaration><![CDATA[(* ===========================================================================================================================================
+   Sub FB/class 2
+   ===========================================================================================================================================
+   Description:
+   This FB extends the base class "FB_Sample_Base". It inherits the basic implementations from the base class.
+   In addition, this FB could contain further, additional variable declarations and methods/properties.
+
+   The method "Calculate" of the base class is OVERWRITTEN in this sub class, as the method is explicitly added to this FB
+   and as the base implementation of the method is NOT called via SUPER pointer.
+		
+   Therefore, when calling the method "Calculate" for an instance of this sub class,
+   a (maybe completely) different implementation is called - than if calling the method for an instance of the base class.
+   =========================================================================================================================================== *)
+FUNCTION_BLOCK FB_Sample_Sub2_MethodOverwritten EXTENDS FB_Sample_Base
+VAR
+	// maybe any further variable declarations
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Calculate" Id="{d7f9862e-3e37-43a2-b66f-ebfaec5e809c}">
+      <Declaration><![CDATA[METHOD Calculate : INT
+VAR_INPUT
+	nIn1	: INT;
+	nIn2	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Calculate := nIn1 * nIn2;
+
+(* 
+- FB_Sample_Sub1_MethodNotChanged:
+		The method "Calculate" of the base class is USED WITHOUT ANY CHANGE in this sub class,
+		as the method is NOT explicitly added to this FB.
+		
+		Therefore, when calling the method "Calculate" for an instance of this sub class,
+		the basic implementations, that are defined in the base class, are executed for the instance of this sub class.
+
+- FB_Sample_Sub2_MethodOverwritten:
+		The method "Calculate" of the base class is OVERWRITTEN in this sub class,
+		as the method is explicitly added to this FB
+		and as the base implementation of the method is NOT called via SUPER pointer.
+		
+		Therefore, when calling the method "Calculate" for an instance of this sub class,
+		a (maybe completely) different implementation is called - than if calling the method for an instance of the base class. 
+
+- FB_Sample_Sub3_MethodExtended:
+		The method "Calculate" of the base class is EXTENDED in this sub class,
+		as the method is explicitly added to this FB
+		and as the base implementation of the method is called via SUPER pointer (SUPER^.Calculate(...)).
+		
+		Therefore, when calling the method "Calculate" for an instance of this sub class,
+		the basic implementations, that are defined in the base class, are executed for the instance of this sub class (due to the SUPER call)
+		and additionally, the further statements are executed for this instance.
+*) ]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="MaybeAnyFurtherMethods" Id="{8e9fc486-3571-4421-852c-ea4904dc3d74}">
+      <Declaration><![CDATA[METHOD MaybeAnyFurtherMethods
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Sample_Sub2_MethodOverwritten">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Sub2_MethodOverwritten.Calculate">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="34" Count="3" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Sample_Sub2_MethodOverwritten.MaybeAnyFurtherMethods">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

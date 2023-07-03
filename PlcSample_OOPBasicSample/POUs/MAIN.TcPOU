@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="MAIN" Id="{35aad695-55f6-41a2-90b5-0783a53be5b4}" SpecialFunc="None">
+    <Declaration><![CDATA[(* =========================================================================================================================
+   OOP: Basic sample
+   =========================================================================================================================
+   General description: 
+   This PLC sample shows some basic functionalities of the object-oriented programming (OOP).
+   The contained elements/functionalities are:
+   Function blocks (FB), methods, properties, FB inheritance/extension and interface (ITF) implementation and usage.
+   =========================================================================================================================
+   Detailed description: 
+   The project contains a base FB/class ("FB_Sample_Base") which contains/provides some basic functionalities:
+   - implementation of the interface "I_Sample"
+   - basic implementation of the method called "Calculate" (in this case, the sum of two input parameters is returned)
+   - ID handling via a property and a local variable to provide an object of this class with an ID
+
+   In addition, the project contains 3 sub FBs/classes ("FB_Sample_Sub<1/2/3>_...") which extend the base class.
+   Sub1 uses the method "Calculate" of the base class without any change.
+   Sub2 overwrites and Sub3 extends the method "Calculate" of the base class.
+   
+   The MAIN program shows 3 aspects:
+   1) Method/Property call via FB instances
+   2) Assign FB instance to interface variable
+   3) Method/Property call via interface variable
+   
+   More explanations and information are described in the further comments in MAIN, in the FBs and in their methods. 
+   =========================================================================================================================
+   InfoSys: https://infosys.beckhoff.de/content/1033/tc3_plc_intro/72057596565231755.html?id=3937754078542861062
+   ========================================================================================================================= *)
+PROGRAM MAIN
+VAR
+	// Variables to be passed to method input parameters
+	nInput1				: INT := 10;
+	nInput2				: INT := 30;
+
+	// FB instances and functionalities
+	fbBase				: FB_Sample_Base 					:= (nObjectID := 1000);
+	fbSub1				: FB_Sample_Sub1_MethodNotChanged 	:= (nObjectID := 1001);
+	fbSub2				: FB_Sample_Sub2_MethodOverwritten 	:= (nObjectID := 1002);
+	fbSub3				: FB_Sample_Sub3_MethodExtended 	:= (nObjectID := 1003);
+	
+	nObjectID_Base		: INT;
+	nObjectID_Sub1		: INT;
+	nObjectID_Sub2		: INT;
+	nObjectID_Sub3		: INT;
+
+	nReturn_Base		: INT;
+	nReturn_Sub1		: INT;
+	nReturn_Sub2		: INT;
+	nReturn_Sub3		: INT;
+	
+	// Interface usage
+	ipSample			: I_Sample;
+	eChooseInstance		: E_ChooseSampleInstance;
+	nObjectID_ITF		: INT;
+	nReturn_ITF			: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//==============================================================================================================================================================================
+// 1) METHOD/PROPERTY CALL VIA FB INSTANCES
+
+// Explanations (you can fold this section via the minus symbol on the left side):
+	(*	A FB can extend another FB by declaring this in the header of the sub class (e.g. "FUNCTION_BLOCK FB_Sub EXTENDS FB_Base").
+		When doing so, (among other things) the variables, which are declared in the base class, are inherited to the sub class.
+		
+		Therefore, the sub classes "FB_Sample_Sub<1/2/3>_..." possess the local variable "nID" which is declared in "FB_Sample_Base".
+		Beside of that, the property implementation "nObjectID" is inherited to the sub classes as it is implicitly declared with the access modifier PUBLIC.
+		Background info: If a method/property is declared with the access modifier PUBLIC or PROTECTED, then the method/property is inherited to the sub class.  *)
+
+	(*	Benefits: 	The handling of the object ID (local variable + property read/write access) was only implemented once in the base class,
+					and without any further effort than extending the FB, this implementation can be used in the sub classes.
+				
+					Plus, if the handling of the object ID needs to be changed, this can be done once in the base class,
+					and the sub classes directly use the optimized implementation. There isn't any code redundancy.	 *)
+nObjectID_Base := fbBase.nObjectID;
+nObjectID_Sub1 := fbSub1.nObjectID;
+nObjectID_Sub2 := fbSub2.nObjectID;
+nObjectID_Sub3 := fbSub3.nObjectID;
+
+// Explanations (you can fold this section via the minus symbol on the left side):
+	(* 	If a method/property is declared with the access modifier PUBLIC or PROTECTED, then the method/property is inherited to a sub class.
+		Then, the sub class has 3 different opportunities how to use this inherited method/property.
+		In this sample, the 3 options are shown by the method "Calculate" and the 3 different sub classes.
+ 
+		- FB_Sample_Sub1_MethodNotChanged:
+				The method "Calculate" of the base class is USED WITHOUT ANY CHANGE in this sub class,
+				as the method is NOT explicitly added to this FB.
+				
+				Therefore, when calling the method "Calculate" for an instance of this sub class,
+				the basic implementations, that are defined in the base class, are executed for the instance of this sub class.
+		
+		- FB_Sample_Sub2_MethodOverwritten:
+				The method "Calculate" of the base class is OVERWRITTEN in this sub class,
+				as the method is explicitly added to this FB
+				and as the base implementation of the method is NOT called via SUPER pointer.
+				
+				Therefore, when calling the method "Calculate" for an instance of this sub class,
+				a (maybe completely) different implementation is called - than if calling the method for an instance of the base class. 
+		
+		- FB_Sample_Sub3_MethodExtended:
+				The method "Calculate" of the base class is EXTENDED in this sub class,
+				as the method is explicitly added to this FB
+				and as the base implementation of the method is called via SUPER pointer (SUPER^.Calculate(...)).
+				
+				Therefore, when calling the method "Calculate" for an instance of this sub class,
+				the basic implementations, that are defined in the base class, are executed for the instance of this sub class (due to the SUPER call)
+				and additionally, the further statements are executed for this instance.  *) 
+nReturn_Base := fbBase.Calculate(nIn1 := nInput1, nIn2 := nInput2);	// 10 + 30 = 40
+nReturn_Sub1 := fbSub1.Calculate(nIn1 := nInput1, nIn2 := nInput2);	// 10 + 30 = 40
+nReturn_Sub2 := fbSub2.Calculate(nIn1 := nInput1, nIn2 := nInput2);	// 10 * 30 = 300
+nReturn_Sub3 := fbSub3.Calculate(nIn1 := nInput1, nIn2 := nInput2);	// (10 + 30) / 10 = 4 
+
+//==============================================================================================================================================================================
+// 2) ASSIGN FB INSTANCE TO INTERFACE VARIABLE
+
+// Explanations (you can fold this section via the minus symbol on the left side):
+	(*	In this part, the desired FB instance is assigned to the interface (ITF) variable.
+		Then, the interface variable points to the FB instance.
+	
+	 	You can assign instances of such FB types which implement the type of the interface variable.
+	 	The implementation of an interface is declared in the header of a FB (e.g. "FUNCTION_BLOCK FB_Sample_Base IMPLEMENTS I_Sample").
+		If a FB implements an interface, the FB has to provide such methods + properties, which are defined within the interface.
+	
+		If a FB extends another FB, (among other things) the interface implementations of the base class are inherited to the sub class.
+		Therefore, also instances of the sub classes ("FB_Sample_Sub<1/2/3>_...") can be assigned to the interface variable.  *)
+	
+	// Hint: For test purpose, you can change the assignment by manually changing the value of "eChooseInstance" via "Write value"
+CASE eChooseInstance OF
+	E_ChooseSampleInstance.Base:	ipSample := fbBase;
+	E_ChooseSampleInstance.Sub1:	ipSample := fbSub1;
+	E_ChooseSampleInstance.Sub2:	ipSample := fbSub2;
+	E_ChooseSampleInstance.Sub3:	ipSample := fbSub3;
+END_CASE
+
+//==============================================================================================================================================================================
+// 3) METHOD/PROPERTY CALL VIA INTERFACE VARIABLE
+
+// Explanations (you can fold this section via the minus symbol on the left side):
+	(*	In this part, the interface method/property is called via the interface variable.
+		In fact, this leads to the following call:
+		As the interface variable points to a FB instance, the method/property will be called for that FB instance which is currently assigned to the interface variable.
+		
+		Via an interface variable, you can call all methods/properties which are defined in the interface.		
+		If a FB implements an interface, the FB has to provide such methods + properties, which are defined within the interface.
+		Therefore, you can call the method/property of a concrete FB instance via an interface variable.  *)
+	
+	(* Hints: You can check...
+			- ...which FB instance is currently assigned to the interface variable by comparing the returned object ID.
+			- ...which method of which FB is called by comparing the value of "nReturn_ITF" with the return values of the FB method calls ("nReturn_<Base/Sub1/Sub2/Sub3>").
+												 or by setting a breakpoint on the interface call and debugging/stepping into the implementation.  *)		 
+IF ipSample <> 0 THEN
+	nObjectID_ITF	:= ipSample.nObjectID;
+	nReturn_ITF 	:= ipSample.Calculate(nIn1 := nInput1, nIn2 := nInput2);
+END_IF
+
+//==============================================================================================================================================================================]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="91" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="144" Count="1" />
+      <LineId Id="161" Count="0" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="147" Count="1" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="149" Count="8" />
+      <LineId Id="143" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="118" Count="22" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="44" Count="2" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="180" Count="1" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="20" Count="3" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="178" Count="1" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="142" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="62" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

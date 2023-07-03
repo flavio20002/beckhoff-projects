@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Trigger" Id="{bf837f36-5635-44bf-9919-774fffaad5ec}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Trigger
+VAR_INPUT
+	CLK: BOOL;
+END_VAR
+VAR_OUTPUT
+	Q: BOOL;
+END_VAR
+VAR
+	CLK_old: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF CLK <> CLK_old AND CLK = TRUE THEN
+	Q := TRUE;
+ELSE
+	Q := FALSE;
+END_IF
+
+CLK_old := CLK;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Trigger">
+      <LineId Id="9" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="27" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

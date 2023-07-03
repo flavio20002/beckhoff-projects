@@ -3,35 +3,29 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{e6ef36ff-d9ca-403a-b0a4-585d3c6eabaa}</ProjectGuid>
+    <ProjectGuid>{75c7f88b-f46a-42fb-a0d0-20f8f25933d5}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>PLC1</Name>
+    <Name>Untitled1</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{67b9b814-57ef-4e1d-a9a2-4cbe05bce20e}</Application>
-    <TypeSystem>{297c7a49-e7ce-4bca-b312-7e00352f8f0d}</TypeSystem>
-    <Implicit_Task_Info>{3affa6cd-d74e-4143-93bf-6a459b16c87a}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{85adbb9a-f0da-4fcf-9a9a-dc49502dc50e}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{dc832800-a60f-4ecf-b37d-dcefccc5b0fe}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{fc802060-1647-48db-ba2a-e8557803dbaf}</LibraryReferences>
+    <Application>{933df0f2-9ac3-4720-af20-4a18460a8a9d}</Application>
+    <TypeSystem>{224f95f0-7167-42f1-98d7-e177eddf386e}</TypeSystem>
+    <Implicit_Task_Info>{93223480-4a9c-4c51-826b-9fff48e78d64}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{99c1bcc4-8ed0-479a-89f5-81fbd94580df}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{064a4054-6a06-454c-81f0-5d23dad0763c}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{776ba8ad-6cd9-4eee-9ccd-7fc3c4aee5ca}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GVLs\myList.TcGVL">
+    <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Trigger.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\POU.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -42,6 +36,9 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="Tc2_MC2">
+      <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -56,29 +53,17 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PLC1.tmc">
+    <None Include="Untitled1.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
-        <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
-        <o>
-          <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
-        </o>
-        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
-        <o>
-          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
-        </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
         <o>
           <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
@@ -91,13 +76,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
