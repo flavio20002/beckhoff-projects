@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="RunGrindingWheel" Id="{b63b43fa-8e36-408e-865a-bb277ea9fe78}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM RunGrindingWheel
+  <POU Name="RunMotor" Id="{b63b43fa-8e36-408e-865a-bb277ea9fe78}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM RunMotor
 VAR
 END_VAR
 ]]></Declaration>
@@ -27,7 +27,7 @@ END_VAR
                       <o n="OutputItems" t="OutputItemList">
                         <l2 n="OutputItems" cet="Operand">
                           <o>
-                            <v n="Operand">"GVL_Grinding.GrindingWheelMS"</v>
+                            <v n="Operand">"GVL.MotorActive"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -107,7 +107,7 @@ END_VAR
                             <l2 n="InputItems" cet="BoxTreeOperand">
                               <o>
                                 <o n="Operand" t="Operand">
-                                  <v n="Operand">"GVL_Grinding.StartGrindingWheelPB"</v>
+                                  <v n="Operand">"GVL.StartMotor"</v>
                                   <v n="Type">"BOOL"</v>
                                   <v n="Comment">""</v>
                                   <v n="SymbolComment">""</v>
@@ -126,7 +126,7 @@ END_VAR
                               </o>
                               <o>
                                 <o n="Operand" t="Operand">
-                                  <v n="Operand">"GVL_Grinding.GrindingWheelMS"</v>
+                                  <v n="Operand">"GVL.MotorActive"</v>
                                   <v n="Type">"BOOL"</v>
                                   <v n="Comment">""</v>
                                   <v n="SymbolComment">""</v>
@@ -162,7 +162,7 @@ END_VAR
                           </o>
                           <o t="BoxTreeOperand">
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"GVL_Grinding.StopGrindingWheelPB"</v>
+                              <v n="Operand">"GVL.StopMotor"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>

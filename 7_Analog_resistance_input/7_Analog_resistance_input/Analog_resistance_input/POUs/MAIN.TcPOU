@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="MAIN" Id="{6e837af7-6a90-49c7-bd59-7eab18a01e98}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{56d10763-6796-48b8-aa8b-e9d8277f85a7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	rReadAnalog1 : REAL;
+	rReadAnalog2 : REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[RunMotor();]]></ST>
+      <ST><![CDATA[rReadAnalog1 := INT_TO_REAL(GVL.bAnalog_Inputs[1])/32767*10;
+rReadAnalog2 := INT_TO_REAL(GVL.bAnalog_Inputs[2])/32767*10;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="10" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
