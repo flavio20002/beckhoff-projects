@@ -102,7 +102,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{38987E78-9429-43D9-98D2-710D2B86E051}" Name="LatchSR" PrjFilePath="LatchSR\LatchSR.plcproj" TmcFilePath="LatchSR\LatchSR.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LatchSR\LatchSR.tmc" TmcHash="{6D29AFE2-E309-D579-9088-431DAC3DB4A5}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LatchSR\LatchSR.tmc" TmcHash="{B740AC20-8FAC-474B-35F3-8F5A136587E6}">
 					<Name>LatchSR Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
