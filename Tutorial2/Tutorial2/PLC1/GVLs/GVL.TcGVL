@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{81fb6fc6-5028-4741-be25-1b9c8fa889b5}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	MotorRun : BOOL;
+	StartMotor : BOOL;
+	StopMotor : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
