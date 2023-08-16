@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="ReadAnalogInputST" Id="{634bea94-d559-45c5-abcf-05fef6410f40}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM ReadAnalogInputST
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL.Analog_Inputs_Values[1] := INT_TO_REAL(GVL.Analog_Inputs[1])/32767*10;
+GVL.Analog_Inputs_Values[2] := INT_TO_REAL(GVL.Analog_Inputs[2])/32767*10;
+GVL.Analog_Inputs_Values[3] := INT_TO_REAL(GVL.Analog_Inputs[3])/32767*10;
+GVL.Analog_Inputs_Values[4] := INT_TO_REAL(GVL.Analog_Inputs[4])/32767*10;
+]]></ST>
+    </Implementation>
+    <LineIds Name="ReadAnalogInputST">
+      <LineId Id="6" Count="3" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

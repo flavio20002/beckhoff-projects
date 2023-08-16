@@ -8,8 +8,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[rReadAnalog1 := INT_TO_REAL(GVL.bAnalog_Inputs[1])/32767*10;
-rReadAnalog2 := INT_TO_REAL(GVL.bAnalog_Inputs[2])/32767*10;]]></ST>
+      <ST><![CDATA[rReadAnalog1 := INT_TO_REAL(GVL.Analog_Inputs_Res[1])/32767*10;
+rReadAnalog2 := INT_TO_REAL(GVL.Analog_Inputs_Res[2])/32767*10;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="10" Count="0" />

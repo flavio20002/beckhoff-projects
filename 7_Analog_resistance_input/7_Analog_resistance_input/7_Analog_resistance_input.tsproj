@@ -101,16 +101,23 @@
 		</System>
 		<Plc>
 			<Project GUID="{99411A5F-21B1-4DD5-8DFF-F2A768D7DE0D}" Name="Analog_resistance_input" PrjFilePath="Analog_resistance_input\Analog_resistance_input.plcproj" TmcFilePath="Analog_resistance_input\Analog_resistance_input.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Analog_resistance_input\Analog_resistance_input.tmc" TmcHash="{E399DE5A-371B-4329-6B1E-426B590B6884}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Analog_resistance_input\Analog_resistance_input.tmc" TmcHash="{89346AEA-59B6-78F6-ED5F-FC2939548167}">
 					<Name>Analog_resistance_input Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL.bAnalog_Inputs</Name>
+							<Name>GVL.Analog_Inputs_Res</Name>
 							<Type GUID="{8B10461D-4958-8550-CE4F-EE8137045945}">ARRAY [1..2] OF INT</Type>
 						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2023-08-16T22:22:47">
+						<OwnerA Name="InputDst" Prefix="TIPC^Analog_resistance_input^Analog_resistance_input Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EL3202)">
+								<Link VarA="GVL.bAnalog_Inputs[1]" TypeA="INT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="RTD Inputs Channel 1^Value" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
@@ -1002,10 +1009,9 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Analog_resistance_input^Analog_resistance_input Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EL3202)">
-				<Link VarA="PlcTask Inputs^GVL.bAnalog_Inputs[1]" VarB="RTD Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^GVL.Analog_Inputs_Res[1]" VarB="RTD Inputs Channel 1^Value"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

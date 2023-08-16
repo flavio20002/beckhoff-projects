@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.47">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF INT</Name>
@@ -11,7 +11,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
 			<BitSize>1</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -20,7 +20,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
 			<BitSize>6</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -45,19 +45,19 @@
 		</System>
 		<Plc>
 			<Project GUID="{4CF7D190-5DC0-432C-8E33-1F9B7E8F81E9}" Name="Analog_Voltage_Input" PrjFilePath="Analog_Voltage_Input\Analog_Voltage_Input.plcproj" TmcFilePath="Analog_Voltage_Input\Analog_Voltage_Input.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F2F682A7-AD5C-ED82-20F8-6A401B57F4A5}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{EC5CC305-36B6-3E3D-4FB1-0172CD7892AF}">
 					<Name>Analog_Voltage_Input Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL.bAnalog_Inputs</Name>
+							<Name>GVL.Analog_Inputs</Name>
 							<Type GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}">ARRAY [1..4] OF INT</Type>
 						</Var>
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010030</OTCID>
@@ -408,13 +408,9 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Analog_Voltage_Input^Analog_Voltage_Input Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL3064)">
-				<Link VarA="PlcTask Inputs^GVL.bAnalog_Inputs[1]" VarB="AI Standard Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^GVL.bAnalog_Inputs[2]" VarB="AI Standard Channel 2^Value"/>
-				<Link VarA="PlcTask Inputs^GVL.bAnalog_Inputs[3]" VarB="AI Standard Channel 3^Value"/>
-				<Link VarA="PlcTask Inputs^GVL.bAnalog_Inputs[4]" VarB="AI Standard Channel 4^Value"/>
+				<Link VarA="PlcTask Inputs^GVL.Analog_Inputs[1]" VarB="AI Standard Channel 1^Value"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

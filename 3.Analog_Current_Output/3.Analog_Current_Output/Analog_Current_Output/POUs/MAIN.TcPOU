@@ -8,8 +8,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL.bAnalog_Outputs[1] := REAL_TO_INT((rWriteAnalog1-4)/16*32767);
-GVL.bAnalog_Outputs[2] := REAL_TO_INT((rWriteAnalog2-4)/16*32767);]]></ST>
+      <ST><![CDATA[GVL.Analog_Outputs_Curr[1] := REAL_TO_INT((rWriteAnalog1-4)/16*32767);
+GVL.Analog_Outputs_Curr[2] := REAL_TO_INT((rWriteAnalog2-4)/16*32767);]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="8" Count="0" />

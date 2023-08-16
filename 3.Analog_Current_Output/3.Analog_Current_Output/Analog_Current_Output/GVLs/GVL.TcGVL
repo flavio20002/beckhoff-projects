@@ -3,7 +3,8 @@
   <GVL Name="GVL" Id="{d23ebe54-3032-44e2-a33a-beac0c680307}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	bAnalog_Outputs AT %Q* : ARRAY[1..2] OF INT;
+	Analog_Outputs_Curr AT %Q* : ARRAY[1..2] OF INT;
+	Analog_Outputs_Curr_Values : ARRAY[1..2] OF REAL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
