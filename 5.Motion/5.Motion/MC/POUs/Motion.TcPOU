@@ -3654,7 +3654,7 @@ END_VAR
                     <v n="Id">10L</v>
                   </o>
                 </l2>
-                <v n="BranchCounter">3</v>
+                <v n="BranchCounter">4</v>
                 <v n="ValidIds">true</v>
               </o>
             </Data>
