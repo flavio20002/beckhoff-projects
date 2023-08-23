@@ -24,12 +24,15 @@ typedef struct _Module1Parameter
 	double data3;
 } Module1Parameter, *PModule1Parameter;
 
+#pragma pack(push,1)
 typedef struct _Module1Inputs
 {
 	ULONG Value;
 	ULONG Status;
 	ULONG Data;
+	bool myData;
 } Module1Inputs, *PModule1Inputs;
+#pragma pack(pop)
 
 typedef struct _Module1Outputs
 {

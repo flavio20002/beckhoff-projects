@@ -4,6 +4,7 @@
 		<System>
 			<Settings MaxCpus="8" NonWinCpus="1">
 				<Cpu CpuId="7"/>
+				<Debugger Priority="61"/>
 			</Settings>
 			<Tasks>
 				<Task Id="2" Priority="1" CycleTime="100000" AmsPort="350" AdtTasks="true">
@@ -87,7 +88,7 @@
 								<AreaNo AreaType="InputDst">0</AreaNo>
 								<Name>Inputs</Name>
 								<ContextId>1</ContextId>
-								<ByteSize>12</ByteSize>
+								<ByteSize>13</ByteSize>
 								<Symbol>
 									<Name>Value</Name>
 									<BitSize>32</BitSize>
@@ -105,6 +106,12 @@
 									<BitSize>32</BitSize>
 									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 									<BitOffs>64</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>myData</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>96</BitOffs>
 								</Symbol>
 							</DataArea>
 							<DataArea>

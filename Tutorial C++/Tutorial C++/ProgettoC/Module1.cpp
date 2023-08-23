@@ -175,7 +175,12 @@ HRESULT CModule1::CycleUpdate(ITcTask* ipTask, ITcUnknown* ipCaller, ULONG_PTR c
 	HRESULT hr = S_OK;
 
 	// TODO: Replace the sample with your cyclic code
-	m_counter+=m_Inputs.Value;
+	if (m_Inputs.myData) {
+		m_counter += m_Inputs.Value;
+	}
+	else {
+		m_counter -= m_Inputs.Value;
+	}
 	m_Outputs.Value=m_counter;
 
 	return hr;
