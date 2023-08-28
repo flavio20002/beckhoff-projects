@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CalculatePrimeNumbers" Id="{21c0020d-2c4b-4255-863d-11193fe24cc2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION CalculatePrimeNumbers
+VAR_INPUT
+	n : INT; // Numero di numeri primi da calcolare
+END_VAR
+
+VAR
+	count : INT := 0; // Contatore per i numeri primi trovati finora
+	divisor: INT; // Divisore
+	currentNumber : INT := 2; // Numero attuale da verificare
+	isPrime : BOOL := TRUE; // Flag che indica se il numero attuale è primo
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[WHILE count < n DO
+	// Verifica se currentNumber è un numero primo
+	FOR divisor := 2 TO currentNumber - 1 DO
+		IF currentNumber MOD divisor = 0 THEN
+			isPrime := FALSE;
+			EXIT;
+		END_IF
+	END_FOR
+	
+	// Se currentNumber è un numero primo, lo aggiunge all'array
+	IF isPrime THEN
+		count := count + 1;
+	END_IF
+	
+	// Passa al prossimo numero
+	currentNumber := currentNumber + 1;
+	isPrime := TRUE; // Reset del flag per il prossimo numero
+END_WHILE]]></ST>
+    </Implementation>
+    <LineIds Name="CalculatePrimeNumbers">
+      <LineId Id="20" Count="11" />
+      <LineId Id="33" Count="4" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
