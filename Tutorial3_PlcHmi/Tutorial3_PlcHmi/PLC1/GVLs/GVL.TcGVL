@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{abd1cc87-af6c-41dc-9365-8d4c70a968fe}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	Bool1: BOOL;
+	Bool2: BOOL;
+	Bool3: BOOL;
+	
+	fbTimer1: TON;
+	
+	Number1: INT;
+	Number2: INT;
+	
+	Real1: REAL;
+	
+	String1: STRING;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
