@@ -11,11 +11,16 @@ END_VAR
 
 GVL.bDigital_Outputs[1] := fbSR.Q1;
 GVL.bDigital_Outputs[2] := fbSR.Q1;
-GVL.bDigital_Outputs[3] := fbSR.Q1;]]></ST>
+GVL.bDigital_Outputs[3] := fbSR.Q1;
+GVL.bDigital_Outputs[4] := fbSR.Q1;
+GVL.bDigital_Outputs[5] := fbSR.Q1;
+GVL.bDigital_Outputs[6] := fbSR.Q1;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="7" Count="2" />
       <LineId Id="14" Count="1" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>
