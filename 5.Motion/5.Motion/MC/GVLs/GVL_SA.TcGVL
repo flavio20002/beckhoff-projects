@@ -6,6 +6,9 @@ VAR_GLOBAL
 	bDigital_Inputs AT %I* : ARRAY[1..8] OF BOOL;
 	bDigital_Outputs AT %Q* : ARRAY[1..8] OF BOOL;
 	
+	bAnalog_Outputs AT %Q* : ARRAY[1..2] OF INT;
+	Analog_Outputs_Values : ARRAY[1..2] OF REAL;
+	
 	// Single Axis 'SA'
 	singleAxis : AXIS_REF;
 	
@@ -22,6 +25,8 @@ VAR_GLOBAL
 	fbSA_MoveAbs2			: MC_MoveAbsolute;
 	fbSA_Stop				: MC_Stop;
 	fbSA_Halt				: MC_Halt;
+	
+	fbSA_ReadStatus			: MC_ReadStatus;
 	
 	bSA_ResetExe			: BOOL;
 	bSA_PowerEnCmd			: BOOL := TRUE;

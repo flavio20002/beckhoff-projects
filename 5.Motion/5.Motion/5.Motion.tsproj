@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.47">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -1433,6 +1433,15 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
+			<Name GUID="{8B10461D-4958-8550-CE4F-EE8137045945}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..2] OF INT</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>2</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
 			<BitSize>1</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
@@ -1702,7 +1711,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{293519F3-C445-43CA-8A70-7372BFB801E7}" Name="MC" PrjFilePath="MC\MC.plcproj" TmcFilePath="MC\MC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="MC\MC.tmc" TmcHash="{3CF09597-52DF-471C-311C-474F258E22E6}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="MC\MC.tmc" TmcHash="{2BA4FF2A-E5C2-B689-D5FA-2AA5036ADD7B}">
 					<Name>MC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -1726,10 +1735,14 @@ External Setpoint Generation:
 							<Name>GVL_SA.singleAxis.PlcToNc</Name>
 							<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
+						<Var>
+							<Name>GVL_SA.bAnalog_Outputs</Name>
+							<Type GUID="{8B10461D-4958-8550-CE4F-EE8137045945}">ARRAY [1..2] OF INT</Type>
+						</Var>
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id>0</Id>
+							<Id NeedCalleeCall="true">0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010060</OTCID>
@@ -2680,6 +2693,10 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 				<Link VarA="PlcTask Outputs^GVL_SA.bDigital_Outputs[6]" VarB="Channel 6^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_SA.bDigital_Outputs[7]" VarB="Channel 7^Output"/>
 				<Link VarA="PlcTask Outputs^GVL_SA.bDigital_Outputs[8]" VarB="Channel 8^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL4002)">
+				<Link VarA="PlcTask Outputs^GVL_SA.bAnalog_Outputs[1]" VarB="AO Outputs Channel 1^Analog output"/>
+				<Link VarA="PlcTask Outputs^GVL_SA.bAnalog_Outputs[2]" VarB="AO Outputs Channel 2^Analog output"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Asse 1">
 				<Link VarA="PlcTask Inputs^GVL_SA.singleAxis.NcToPlc" VarB="Outputs^ToPlc"/>
