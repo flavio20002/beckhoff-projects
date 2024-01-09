@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{d7ca84df-629a-44db-b93f-616535b99ac3}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	pBDelay: BOOL;
+	probeDelay: BOOL;
+	pbTimer: BOOL;
+	probeTimer: BOOL;
+	pbBlink: BOOL;
+	blinkEnable: BOOL;
+	probeBlink: BOOL;
+	pbClear: BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

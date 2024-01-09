@@ -3,14 +3,6 @@
   <POU Name="MAIN" Id="{58bdfdbe-4664-4c4d-ac2e-d1b894b8810e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	pBDelay: BOOL;
-	probeDelay: BOOL;
-	pbTimer: BOOL;
-	probeTimer: BOOL;
-	pbBlink: BOOL;
-	blinkEnable: BOOL;
-	probeBlink: BOOL;
-	pbClear: BOOL;
 	TONDelay: TON;
 	TONTimer: TON;
 	TONBlink1: TON;
@@ -45,7 +37,7 @@ Blink();]]></ST>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
-                              <v n="Operand">"blinkEnable"</v>
+                              <v n="Operand">"GVL.blinkEnable"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -125,7 +117,7 @@ Blink();]]></ST>
                               <l2 n="InputItems" cet="BoxTreeOperand">
                                 <o>
                                   <o n="Operand" t="Operand">
-                                    <v n="Operand">"pbBlink"</v>
+                                    <v n="Operand">"GVL.pbBlink"</v>
                                     <v n="Type">"BOOL"</v>
                                     <v n="Comment">""</v>
                                     <v n="SymbolComment">""</v>
@@ -144,7 +136,7 @@ Blink();]]></ST>
                                 </o>
                                 <o>
                                   <o n="Operand" t="Operand">
-                                    <v n="Operand">"blinkEnable"</v>
+                                    <v n="Operand">"GVL.blinkEnable"</v>
                                     <v n="Type">"BOOL"</v>
                                     <v n="Comment">""</v>
                                     <v n="SymbolComment">""</v>
@@ -180,7 +172,7 @@ Blink();]]></ST>
                             </o>
                             <o t="BoxTreeOperand">
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"pbClear"</v>
+                                <v n="Operand">"GVL.pbClear"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -234,7 +226,7 @@ Blink();]]></ST>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
-                              <v n="Operand">"probeBlink"</v>
+                              <v n="Operand">"GVL.probeBlink"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -316,7 +308,7 @@ Blink();]]></ST>
                               <l2 n="InputItems" cet="BoxTreeOperand">
                                 <o>
                                   <o n="Operand" t="Operand">
-                                    <v n="Operand">"blinkEnable"</v>
+                                    <v n="Operand">"GVL.blinkEnable"</v>
                                     <v n="Type">"BOOL"</v>
                                     <v n="Comment">""</v>
                                     <v n="SymbolComment">""</v>
@@ -491,7 +483,7 @@ Blink();]]></ST>
                             <l2 n="InputItems" cet="BoxTreeOperand">
                               <o>
                                 <o n="Operand" t="Operand">
-                                  <v n="Operand">"blinkEnable"</v>
+                                  <v n="Operand">"GVL.blinkEnable"</v>
                                   <v n="Type">"BOOL"</v>
                                   <v n="Comment">""</v>
                                   <v n="SymbolComment">""</v>
@@ -642,7 +634,7 @@ Blink();]]></ST>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
-                              <v n="Operand">"probeDelay"</v>
+                              <v n="Operand">"GVL.probeDelay"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -768,7 +760,7 @@ Blink();]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"pBDelay"</v>
+                                        <v n="Operand">"GVL.pBDelay"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -835,7 +827,7 @@ Blink();]]></ST>
                                 </o>
                                 <o t="BoxTreeOperand">
                                   <o n="Operand" t="Operand">
-                                    <v n="Operand">"probeDelay"</v>
+                                    <v n="Operand">"GVL.probeDelay"</v>
                                     <v n="Type">"BOOL"</v>
                                     <v n="Comment">""</v>
                                     <v n="SymbolComment">""</v>
@@ -871,7 +863,7 @@ Blink();]]></ST>
                             </o>
                             <o t="BoxTreeOperand">
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"pbClear"</v>
+                                <v n="Operand">"GVL.pbClear"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -959,7 +951,7 @@ Blink();]]></ST>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems" cet="Operand">
                             <o>
-                              <v n="Operand">"probeTimer"</v>
+                              <v n="Operand">"GVL.probeTimer"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -1039,7 +1031,7 @@ Blink();]]></ST>
                               <l2 n="InputItems">
                                 <o t="BoxTreeOperand">
                                   <o n="Operand" t="Operand">
-                                    <v n="Operand">"pBTimer"</v>
+                                    <v n="Operand">"GVL.pBTimer"</v>
                                     <v n="Type">"BOOL"</v>
                                     <v n="Comment">""</v>
                                     <v n="SymbolComment">""</v>
@@ -1086,7 +1078,7 @@ Blink();]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"probeTimer"</v>
+                                        <v n="Operand">"GVL.probeTimer"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -1158,7 +1150,7 @@ Blink();]]></ST>
                             </o>
                             <o t="BoxTreeOperand">
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"pbClear"</v>
+                                <v n="Operand">"GVL.pbClear"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -1240,7 +1232,7 @@ Blink();]]></ST>
                         <l2 n="InputItems" cet="BoxTreeOperand">
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"probeTimer"</v>
+                              <v n="Operand">"GVL.probeTimer"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>

@@ -84,7 +84,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.probeDelay"</v>
+                      <v n="Value">"GVL.probeDelay"</v>
                     </o>
                   </l>
                 </o>
@@ -186,7 +186,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.pBDelay"</v>
+                      <v n="Value">"GVL.pBDelay"</v>
                     </o>
                   </l>
                 </o>
@@ -417,7 +417,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.pbClear"</v>
+                      <v n="Value">"GVL.pbClear"</v>
                     </o>
                   </l>
                 </o>
@@ -640,7 +640,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.probeTimer"</v>
+                      <v n="Value">"GVL.probeTimer"</v>
                     </o>
                   </l>
                 </o>
@@ -742,7 +742,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.pbTimer"</v>
+                      <v n="Value">"GVL.pbTimer"</v>
                     </o>
                   </l>
                 </o>
@@ -965,7 +965,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.probeBlink"</v>
+                      <v n="Value">"GVL.probeBlink"</v>
                     </o>
                   </l>
                 </o>
@@ -1067,7 +1067,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"MAIN.pbBlink"</v>
+                      <v n="Value">"GVL.pbBlink"</v>
                     </o>
                   </l>
                 </o>
