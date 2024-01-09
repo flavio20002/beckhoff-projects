@@ -1506,7 +1506,9 @@ External Setpoint Generation:
 	</ImageDatas>
 	<Project ProjectGUID="{8FDAB097-6E35-4101-8662-5A2E9A3DE5E9}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
-			<Settings MaxCpus="8"/>
+			<Settings MaxCpus="2" NonWinCpus="1">
+				<Cpu CpuId="1"/>
+			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
