@@ -3,12 +3,11 @@
   <POU Name="MAIN" Id="{7571f8af-4de2-4e17-939f-a7e6f2a21ac7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	TONDelay: TON;
 	TON_Delay: TON;
 	TON_Timer: TON;
-	blinkEnable: BOOL;
 	TON_Blink1: TON;
 	TON_Blink2: TON;
+	blinkEnable: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
