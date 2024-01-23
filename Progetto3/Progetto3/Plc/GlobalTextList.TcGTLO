@@ -1,35 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <GlobalTextList Name="GlobalTextList" Id="{4aa4a550-1ae2-40a6-bcf1-df6631e25cce}">
+  <GlobalTextList Name="GlobalTextList" Id="{74de3d92-0374-4c52-bc82-a20a084a415e}">
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalTextListObject">
           <l n="TextList" t="ArrayList" cet="TextListRow">
             <o>
-              <v n="TextID">"63"</v>
+              <v n="TextID">"107"</v>
               <v n="TextDefault">"Blink"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"831"</v>
+              <v n="TextID">"196"</v>
               <v n="TextDefault">"Clear"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"467"</v>
+              <v n="TextID">"191"</v>
               <v n="TextDefault">"Delay"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"335"</v>
+              <v n="TextID">"662"</v>
               <v n="TextDefault">"Timer"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>
           <l n="Languages" t="ArrayList" />
-          <v n="GuidInit">{ec6b485f-23c4-4273-b3ff-da8ee4cc9f14}</v>
-          <v n="GuidReInit">{19e0f3e8-7a7a-4f35-82e4-2065e1e8e695}</v>
-          <v n="GuidExitX">{37b0bc37-4c0b-4774-a707-97974fc78998}</v>
+          <v n="GuidInit">{76d099d5-b0da-47bf-b08d-d6523f137fc6}</v>
+          <v n="GuidReInit">{69a3e390-3555-4669-8ba4-2bd5c794e186}</v>
+          <v n="GuidExitX">{3b6d1c35-6a75-4b43-8f8d-589a185ba223}</v>
         </o>
       </Data>
       <TypeList>

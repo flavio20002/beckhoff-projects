@@ -2,19 +2,19 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{a97c97fb-263a-44bc-9abb-9caa404a8642}</ProjectGuid>
+    <ProjectGuid>{b0aee48c-9ca4-4284-b96d-5b989a63a3e3}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>Plc</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{91e5a5cf-c5e2-452e-8588-c4ee0a01f28f}</Application>
-    <TypeSystem>{96605af0-3bbe-430d-946f-7bc9e0fb2c87}</TypeSystem>
-    <Implicit_Task_Info>{4da3ebc7-3e3d-4aca-9e71-ef0e940696aa}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{a8d5d37b-6869-49d1-9a10-a4614025a9cb}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{8ec2a334-7d72-47ea-8fe2-3bc11a1452fb}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{e8b5bfcf-0b17-4611-ac3b-6f96be4aa499}</LibraryReferences>
+    <Application>{d00b1426-35fb-4059-ab6c-9824f3dda2f9}</Application>
+    <TypeSystem>{c6f9d3e8-946a-4d1d-a0c3-c6845a64921b}</TypeSystem>
+    <Implicit_Task_Info>{11a40316-474f-43d7-b849-7cf194e6a33f}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{80430cd4-7de6-4ec3-b3cf-7b603f135019}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{a78d0c97-88e3-4614-ad0f-96a8547cbd7f}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{cada58a4-6883-4f43-93e5-9074a21d4d49}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Gestore di visualizzazione.TcVMO">
@@ -131,12 +131,6 @@
             <v>UnicodeStrings</v>
             <v>False</v>
           </d>
-        </o>
-        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
-        <o>
-          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
         <o>
