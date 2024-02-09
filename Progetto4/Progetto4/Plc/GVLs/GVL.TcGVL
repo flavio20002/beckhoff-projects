@@ -7,6 +7,10 @@ VAR_GLOBAL
 	pAbilitaMotore: BOOL;
 	pDisabilitaMotore: BOOL;
 	motoreAbilitato: BOOL;
+	pAbilitaJog: BOOL;
+	bErrorJog: BOOL;
+	pMoveVelocity: BOOL;
+	pHalt: BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
