@@ -1426,8 +1426,8 @@ External Setpoint Generation:
 	</DataTypes>
 	<Project ProjectGUID="{0E225AFE-6C71-42A2-A136-89B3D66F3C59}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
-			<Settings MaxCpus="2" NonWinCpus="1">
-				<Cpu CpuId="1"/>
+			<Settings MaxCpus="8" NonWinCpus="1">
+				<Cpu CpuId="7"/>
 			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
@@ -1610,7 +1610,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{55F8C9E2-1ECB-4608-BBFE-95D2AEDFCE62}" Name="Plc" PrjFilePath="Plc\Plc.plcproj" TmcFilePath="Plc\Plc.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Plc\Plc.tmc" TmcHash="{DB295641-585C-584E-E61E-CCDBB63D3C78}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Plc\Plc.tmc" TmcHash="{2D5A49BD-54B8-3037-CA2F-21FC1EF91337}">
 					<Name>Plc Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
