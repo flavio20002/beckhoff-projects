@@ -1,75 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <GlobalTextList Name="GlobalTextList" Id="{7ed4ca46-4d00-4921-87b8-bd9ae0a085a2}">
+  <GlobalTextList Name="GlobalTextList" Id="{b5ba0c9b-ab3b-4a98-9e3e-55f2443c55e5}">
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalTextListObject">
           <l n="TextList" t="ArrayList" cet="TextListRow">
             <o>
-              <v n="TextID">"4"</v>
+              <v n="TextID">"727"</v>
               <v n="TextDefault">"%d"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"166"</v>
+              <v n="TextID">"438"</v>
               <v n="TextDefault">"Abilita motore"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"310"</v>
+              <v n="TextID">"657"</v>
               <v n="TextDefault">"Disabilita motore"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"622"</v>
+              <v n="TextID">"37"</v>
               <v n="TextDefault">"Errore Jog"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"426"</v>
-              <v n="TextDefault">"Errore motore"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
-              <v n="TextID">"859"</v>
+              <v n="TextID">"736"</v>
               <v n="TextDefault">"Halt"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"5"</v>
+              <v n="TextID">"608"</v>
               <v n="TextDefault">"Jog"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"351"</v>
+              <v n="TextID">"247"</v>
               <v n="TextDefault">"Motore abilitato"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"664"</v>
+              <v n="TextID">"615"</v>
               <v n="TextDefault">"Motore in movimento"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"831"</v>
-              <v n="TextDefault">"Move Velocity"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
-              <v n="TextID">"104"</v>
-              <v n="TextDefault">"Posizione motore"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
               <v n="TextID">"227"</v>
-              <v n="TextDefault">"Testo"</v>
+              <v n="TextDefault">"Move velocity"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"710"</v>
+              <v n="TextDefault">"Posizione motore"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>
           <l n="Languages" t="ArrayList" />
-          <v n="GuidInit">{90595132-5ea3-4c9f-a827-12ec76c1e0b3}</v>
-          <v n="GuidReInit">{348bdfab-0548-4ac3-98b6-1bd3b1e73a75}</v>
-          <v n="GuidExitX">{5ed5a698-ff8a-46b7-b0c0-5a2ffb3de95f}</v>
+          <v n="GuidInit">{edbca54b-430a-4444-9332-7d4fe65a70be}</v>
+          <v n="GuidReInit">{297abf39-a5f6-4025-86ce-3de3e804556c}</v>
+          <v n="GuidExitX">{228adcc7-f1ba-4a3e-a508-fb506d9d0c27}</v>
         </o>
       </Data>
       <TypeList>

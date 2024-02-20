@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <GVL Name="GVL" Id="{75970409-6cef-43b3-8ebe-a18c6cf1903e}">
+  <GVL Name="GVL" Id="{655dbc17-70e0-4cbd-8edb-f6745b719644}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	Axis: AXIS_REF;
-	pAbilitaMotore: BOOL;
-	pDisabilitaMotore: BOOL;
-	motoreAbilitato: BOOL;
-	pAbilitaJog: BOOL;
-	bErrorJog: BOOL;
-	pMoveVelocity: BOOL;
-	pHalt: BOOL;
+	axis : AXIS_REF;
+	pBEnableMotor : BOOL;
+	pbDisableMotor : BOOL;
+	motorIsEnabled : BOOL;
+	motorIsReallyEnabled : BOOL;
+	pBJog : BOOL;
+	jogError: BOOL;
+	pBMoveVelocity : BOOL;
+	pBHalt : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
