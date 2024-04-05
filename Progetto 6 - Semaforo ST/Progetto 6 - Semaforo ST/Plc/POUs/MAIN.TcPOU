@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{9ee135b9-c744-4e1d-8fdd-85fcc83c3155}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	Verde: BOOL;
+	Giallo: BOOL;
+	Rosso: BOOL;
+	Ton1: TON;
+	Ton2: TON;
+	Ton3: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Ton1(IN:= NOT Ton3.Q, PT:= T#5S);
+Ton2(IN:= Ton1.Q, PT:= T#2S);
+Ton3(IN:= Ton2.Q, PT:= T#8S);
+
+Verde:= NOT Ton1.Q;
+Giallo:= NOT Ton2.Q AND Ton1.Q;
+Rosso:= NOT Ton3.Q AND Ton2.Q;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
