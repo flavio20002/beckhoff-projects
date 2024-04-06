@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{4882d1f9-8880-4e6c-af6c-fb4a239506b7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	bStart: BOOL; //Pulsante di Start
+	bStop: BOOL; //Pulsante di Stop
+	Green: BOOL; //Luce verde
+	Yellow: BOOL; //Luce gialla
+	Red: BOOL; //Luce rossa
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -2,26 +2,36 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4939dc71-17f6-4c68-87a6-bc9da543538e}</ProjectGuid>
+    <ProjectGuid>{4acf1687-7f86-40c9-a534-eb99d6b2b3ca}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>PLC1</Name>
+    <Name>Plc</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{7bf32a07-969b-4985-9a5b-753a676913a8}</Application>
-    <TypeSystem>{45f6188d-939a-4da7-aea4-5d5121e63b83}</TypeSystem>
-    <Implicit_Task_Info>{d487927c-f402-4b32-b696-ca2903120ef8}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{725ab3d9-a807-4903-a6ad-24daf95458f8}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{855354b5-29d7-41aa-b0a3-a00ceaaa58f2}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{0f1a276f-ba57-41e8-8213-449ff8176721}</LibraryReferences>
+    <Application>{679ad2ce-0c74-402e-9198-3c12aeff5041}</Application>
+    <TypeSystem>{65b02971-abb0-4e4a-8e85-b97538188858}</TypeSystem>
+    <Implicit_Task_Info>{41efe711-8ecd-4611-869a-7464f2e6d9e7}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{e862a9a0-1bb1-43d1-8d5d-5e2e3602a461}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{decc8f6a-9068-4f95-b5a6-43e5124bd0f5}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{b6d415b1-938d-432b-8a5f-d718e0b1eaf2}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Gestore di visualizzazione.TcVMO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalTextList.TcGTLO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VISUs\Visualization.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Gestore di visualizzazione.TcVMO</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +41,48 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="System_VisuElemMeter">
+      <DefaultResolution>VisuElemMeter, 3.5.13.0 (System)</DefaultResolution>
+      <Namespace>VisuElemMeter</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
+    <PlaceholderReference Include="System_VisuElems">
+      <DefaultResolution>VisuElems, 3.5.13.40 (System)</DefaultResolution>
+      <Namespace>VisuElems</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
+    <PlaceholderReference Include="System_VisuElemsSpecialControls">
+      <DefaultResolution>VisuElemsSpecialControls, 3.5.13.0 (System)</DefaultResolution>
+      <Namespace>VisuElemsSpecialControls</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
+    <PlaceholderReference Include="System_VisuElemsWinControls">
+      <DefaultResolution>VisuElemsWinControls, 3.5.13.20 (System)</DefaultResolution>
+      <Namespace>VisuElemsWinControls</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
+    <PlaceholderReference Include="System_VisuElemTextEditor">
+      <DefaultResolution>VisuElemTextEditor, 3.5.13.0 (System)</DefaultResolution>
+      <Namespace>VisuElemTextEditor</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
+    <PlaceholderReference Include="system_visuinputs">
+      <DefaultResolution>visuinputs, 3.5.13.0 (system)</DefaultResolution>
+      <Namespace>visuinputs</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
+    <PlaceholderReference Include="System_VisuNativeControl">
+      <DefaultResolution>VisuNativeControl, 3.5.13.0 (System)</DefaultResolution>
+      <Namespace>VisuNativeControl</Namespace>
+      <SystemLibrary>true</SystemLibrary>
+      <ResolverGuid>2717eb6a-dd07-4c66-8d8d-cacebd7b18ae</ResolverGuid>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -45,15 +97,15 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PLC1.tmc">
-      <SubType>Content</SubType>
-    </None>
+    <LibraryReference Include="VisuSymbols,3.5.10.0,System">
+      <Namespace>VisuSymbols</Namespace>
+    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -62,11 +114,14 @@
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
         </o>
-        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
         <o>
-          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
           <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="Boolean">
+            <v>UnicodeStrings</v>
+            <v>False</v>
+          </d>
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
         <o>
@@ -80,13 +135,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Boolean">System.Boolean</Type>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

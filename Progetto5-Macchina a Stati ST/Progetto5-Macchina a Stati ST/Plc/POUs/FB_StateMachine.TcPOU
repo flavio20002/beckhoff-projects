@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_StateMachine" Id="{5bf20328-56ac-41a1-b713-7d0c25d006c1}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_StateMachine
+VAR_INPUT
+	bStart: BOOL;
+	bStop: BOOL;
+END_VAR
+VAR_OUTPUT
+	Green: BOOL;
+	Yellow: BOOL;
+	Red: BOOL;
+END_VAR
+VAR
+	eState : E_States;
+	T_Green: TON;
+	T_Yellow: TON;
+	T_Red: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF (bStop) THEN
+	T_Green(IN:= FALSE); // Reset del timer
+	T_Yellow(IN:= FALSE); // Reset del timer
+	T_Red(IN:= FALSE); // Reset del timer
+   eState := E_States.eStop;
+END_IF
+
+CASE eState OF
+  E_States.eStop:
+  	Green:= FALSE;
+	Yellow:= FALSE;
+	Red:= FALSE;
+    IF (NOT bStop AND bStart) THEN
+       eState := E_States.eGreen; //Vado allo stato Green
+    END_IF
+ 
+  E_States.eGreen:
+    T_Green(IN:= TRUE, PT:= T#5S);
+	Green:= TRUE;
+	Yellow:= FALSE;
+	Red:= FALSE;
+	IF (T_Green.Q) THEN
+		T_Green(IN:= FALSE, PT:= T#5S); // Reset del timer
+		eState:= E_States.eYellow;
+	END_IF
+    
+  E_States.eYellow:
+    T_Yellow(IN:= TRUE, PT:= T#2S);
+	Green:= TRUE;
+	Yellow:= TRUE;
+	Red:= FALSE;
+	IF (T_Yellow.Q) THEN
+		T_Yellow(IN:= FALSE, PT:= T#2S); // Reset del timer
+		eState:= E_States.eRed;
+	END_IF
+ 
+  E_States.eRed:
+    T_Red(IN:= TRUE, PT:= T#8S);
+	Green:= FALSE;
+	Yellow:= FALSE;
+	Red:= TRUE;
+	IF (T_Red.Q) THEN
+		T_Red(IN:= FALSE, PT:= T#8S); // Reset del timer
+		eState:= E_States.eGreen;
+	END_IF
+ 
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_StateMachine">
+      <LineId Id="81" Count="0" />
+      <LineId Id="104" Count="2" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="79" Count="1" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="100" Count="1" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="17" Count="2" />
+      <LineId Id="24" Count="1" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="87" Count="2" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="60" Count="1" />
+      <LineId Id="91" Count="1" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="62" Count="2" />
+      <LineId Id="41" Count="1" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="97" Count="1" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="76" Count="2" />
+      <LineId Id="47" Count="1" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
