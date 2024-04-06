@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <GlobalTextList Name="GlobalTextList" Id="{38441a65-549f-4bb9-8cc9-235d05e310aa}">
+  <GlobalTextList Name="GlobalTextList" Id="{7cb67ab3-63d9-4fac-8710-718328767810}">
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalTextListObject">
           <l n="TextList" t="ArrayList" cet="TextListRow">
             <o>
-              <v n="TextID">"939"</v>
+              <v n="TextID">"615"</v>
               <v n="TextDefault">"START"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"641"</v>
+              <v n="TextID">"519"</v>
               <v n="TextDefault">"STOP"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>
           <l n="Languages" t="ArrayList" />
-          <v n="GuidInit">{a63a2fa7-3c3a-4dc6-809b-6d4a1985ece5}</v>
-          <v n="GuidReInit">{1ce70470-0aad-45ec-9668-a98994c96f9c}</v>
-          <v n="GuidExitX">{f45e72f8-512f-463c-b7b2-df6f89530b34}</v>
+          <v n="GuidInit">{662c7dba-5e05-4476-b779-fda367887e8e}</v>
+          <v n="GuidReInit">{73731b29-5853-4eaf-8efd-05d6a37af143}</v>
+          <v n="GuidExitX">{130c3272-3ec7-45b2-91b1-926648a5d6a9}</v>
         </o>
       </Data>
       <TypeList>

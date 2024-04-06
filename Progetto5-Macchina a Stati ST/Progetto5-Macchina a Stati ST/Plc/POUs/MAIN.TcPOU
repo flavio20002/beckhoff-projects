@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="MAIN" Id="{fc3bf337-a2c5-4f78-93e6-b50f81040e55}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{f9e4b367-ad8f-430f-9804-4161bafbc001}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	StateMachine: FB_StateMachine;
@@ -8,16 +8,15 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[StateMachine(bStart:= Gvl.bStart, bStop:= Gvl.bStop);
-
-GVL.Green := StateMachine.Green;
-GVL.Yellow := StateMachine.Yellow;
-GVL.Red := StateMachine.Red;]]></ST>
+//Scrivo gli output
+Gvl.Green := StateMachine.Green;
+Gvl.Yellow := StateMachine.Yellow;
+Gvl.Red := StateMachine.Red;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="8" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="9" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="7" Count="2" />
     </LineIds>
   </POU>
 </TcPlcObject>

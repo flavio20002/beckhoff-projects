@@ -2,19 +2,19 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{85f97f97-b0be-4ef5-bb6e-14794b13f295}</ProjectGuid>
+    <ProjectGuid>{24cf40b2-c236-4beb-8510-6ca4bde54cae}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>Plc</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{f1927266-056a-4a42-99e4-c0d6effbca90}</Application>
-    <TypeSystem>{8b743413-e5f2-4b76-ad18-01bb99b92384}</TypeSystem>
-    <Implicit_Task_Info>{4b378227-af72-4179-9b9e-7c1d8a469200}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{fa9187b9-9007-47de-8a75-2532f66cbc3a}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{a0f1c1fe-aa2a-47b6-9780-6e7f5e6bcc0c}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{52da9a6c-f129-4e85-b60d-6e673bba28ae}</LibraryReferences>
+    <Application>{48568505-50bb-4294-95d2-81911f3f53e7}</Application>
+    <TypeSystem>{30cb0e37-3365-4828-96c3-e5d1a82a5749}</TypeSystem>
+    <Implicit_Task_Info>{879f14aa-eb12-4bf5-bc2f-3cb510aaa206}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{bf5caff7-bc24-45ba-a304-8f8a2d451899}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{4e068d28-6ac6-478c-baab-832028071462}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{82d1c8b3-be61-4967-9ce7-3e661751f8b9}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\E_States.TcDUT">
@@ -26,7 +26,7 @@
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\GVL.TcGVL">
+    <Compile Include="GVLs\Gvl.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
