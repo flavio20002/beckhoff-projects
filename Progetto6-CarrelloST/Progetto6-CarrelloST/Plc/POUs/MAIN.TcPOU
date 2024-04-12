@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{add9e90c-83f4-422c-9a2b-4e12fd816484}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	StateMachine: FB_StateMachine;
+	Visualization: FB_Visualization;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[StateMachine(bStart:= GVL.bStart, bStop:= GVL.bStop, bLimitLeft:= GVL.bLimitLeft, bLimitRight:= GVL.bLimitRight );
+Visualization(bMovingRight:= StateMachine.bMovingRight, bMovingLeft:=StateMachine.bMovingLeft);
+GVL.bLimitLeft := Visualization.bLimitLeft;
+GVL.bLimitRight := Visualization.bLimitRight;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="8" Count="0" />
+      <LineId Id="14" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

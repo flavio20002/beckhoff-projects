@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Visualization" Id="{ea6cfb47-13fc-4b28-af4c-16077307fb77}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Visualization
+VAR_INPUT
+	bMovingRight : BOOL;
+	bMovingLeft : BOOL;
+END_VAR
+VAR_OUTPUT
+	bLimitLeft : BOOL;
+	bLimitRight: BOOL;
+END_VAR
+VAR
+	Position: REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bMovingRight THEN
+	bLimitLeft := FALSE;
+	bLimitRight := FALSE;
+	Position := Position + 0.5;
+	IF (Position >= 310) THEN
+		bLimitRight := TRUE;
+	END_IF
+ELSIF bMovingLeft THEN
+	bLimitLeft := FALSE;
+	bLimitRight := FALSE;
+	Position := Position - 0.5;
+	IF (Position <=  0) THEN
+		bLimitLeft := TRUE;
+	END_IF
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Visualization">
+      <LineId Id="39" Count="0" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="43" Count="3" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="64" Count="1" />
+      <LineId Id="61" Count="2" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_StateMachine" Id="{10e671e1-a6a3-45c6-a325-3335c9cdfed7}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_StateMachine
+VAR_INPUT
+	bStart : BOOL;
+	bStop : BOOL;
+	bLimitLeft : BOOL;
+	bLimitRight: BOOL;
+END_VAR
+VAR_OUTPUT
+	bMovingRight : BOOL;
+	bMovingLeft: BOOL;
+END_VAR
+VAR
+	TrigStop: R_TRIG;
+	state : E_States;
+	prevState : E_States;
+	sState: STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TrigStop(CLK:=bStop);
+
+IF TrigStop.Q THEN
+	prevState := state;
+	state:= E_States.eStop;
+END_IF	
+
+
+CASE state OF
+	E_States.eStop:
+		sState := 'Stop';
+		bMovingRight := FALSE;
+		bMovingLeft := FALSE;
+		IF bStart THEN
+			IF prevState = E_States.eMovingLeft THEN
+				state:= E_States.eMovingLeft;
+			ELSE
+				state:= E_States.eMovingRight;
+			END_IF
+		END_IF
+	
+	E_States.eMovingRight:
+		sState := 'Moving Right';
+		bMovingRight := TRUE;
+		bMovingLeft := FALSE;
+		IF bLimitRight THEN
+			state:= E_States.eMovingLeft;
+		END_IF
+	
+	E_States.eMovingLeft:
+		sState := 'Moving Left';
+		bMovingRight := FALSE;
+		bMovingLeft := TRUE;
+		IF bLimitLeft THEN
+			state:= E_States.eMovingRight;
+		END_IF
+	
+	
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_StateMachine">
+      <LineId Id="91" Count="1" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="83" Count="1" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="44" Count="2" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="22" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
