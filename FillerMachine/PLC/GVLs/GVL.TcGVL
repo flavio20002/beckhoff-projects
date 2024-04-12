@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{170d70cb-a831-40da-b9c1-557d2d290e9b}">
+    <Declaration><![CDATA[(* -----------------------------------------------------------------------------
+| This sample has been supplied by Beckhoff As-Is and is intended only as an   |
+| example implementation. Functionality is not guaranteed.                     |
+----------------------------------------------------------------------------- *)
+
+{attribute 'qualified_only'}
+VAR_GLOBAL
+	// input
+	bStart : BOOL;				// pulsante di start
+	bStop : BOOL;				// pulsante di stop
+	bBottle : BOOL;				// fotocellula FC1		
+
+	// output
+	bConveyor : BOOL;			// nastro trasportatore
+	bWater : BOOL;				// riempimento acqua
+	bMint : BOOL;				// riempimento menta	
+	bCorking : BOOL;			// inserimento del tappo
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

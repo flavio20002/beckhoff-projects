@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_StateMachine" Id="{dc0f107e-e5d6-4626-8375-b7a8e433f6a4}" SpecialFunc="None">
+    <Declaration><![CDATA[(* -----------------------------------------------------------------------------
+| This sample has been supplied by Beckhoff As-Is and is intended only as an   |
+| example implementation. Functionality is not guaranteed.                     |
+----------------------------------------------------------------------------- *)
+
+FUNCTION_BLOCK FB_StateMachine
+VAR_INPUT
+	bStart : BOOL;
+	bStop : BOOL;	
+	bBottle : BOOL;				// fotocellula FC1	
+END_VAR
+VAR_OUTPUT
+	bConveyor : BOOL;			// nastro trasportatore
+	bWater : BOOL;				// riempimento acqua
+	bMint : BOOL;				// riempimento menta	
+	bCorking : BOOL;			// inserimento del tappo
+END_VAR
+VAR
+	nStep : INT;
+	
+	fbTonBottle : TON;
+	fbRtBottle : R_TRIG;
+	
+	fbTonStep2 : TON;
+	fbTonStep3 : TON;
+	fbTonStep4 : TON;
+	fbTonStep5 : TON;
+	fbTonStep6 : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* -----------------------------------------------------------------------------
+| This sample has been supplied by Beckhoff As-Is and is intended only as an   |
+| example implementation. Functionality is not guaranteed.                     |
+----------------------------------------------------------------------------- *)
+
+(* filtri *)
+fbTonBottle(IN:= bBottle, PT:= T#500MS);		// filtro sensore presenza bottiglia
+
+(* fronti *)
+fbRtBottle(CLK:= fbTonBottle.Q);
+
+(* tempo di permanenza negli step *)
+fbTonStep2(IN:= nStep = 2, PT:= T#5S);			// tempo di riempimento acqua
+fbTonStep3(IN:= nStep = 3, PT:= T#1S);			// tempo di riempimento menta
+fbTonStep4(IN:= nStep = 4, PT:= T#1S);			// attesa prima di tappatura
+fbTonStep5(IN:= nStep = 5, PT:= T#3S);			// tempo di tappatura
+fbTonStep6(IN:= nStep = 6, PT:= T#1S);			// attesa dopo tappatura
+
+CASE nStep OF
+	0: (* macchina ferma *)
+		bConveyor := FALSE;
+		bWater := FALSE;
+		bMint := FALSE;
+		bCorking := FALSE;
+		
+		(* transition *)
+		IF NOT bStop AND bStart THEN
+			nStep := 1;
+		END_IF
+		
+	1: (* avanzamento nastro *)
+		bConveyor := TRUE;
+		bWater := FALSE;
+		bMint := FALSE;
+		bCorking := FALSE;
+		
+		(* transition *)
+		IF fbRtBottle.Q THEN
+			nStep := 2;
+		END_IF
+		
+	2: (* riempimento acqua *)
+		bConveyor := FALSE;
+		bWater := TRUE;
+		bMint := FALSE;
+		bCorking := FALSE;
+		
+		(* transition *)
+		IF fbTonStep2.Q THEN
+			nStep := 3;
+		END_IF
+		
+	3: (* riempimento menta *)
+		bConveyor := FALSE;
+		bWater := FALSE;
+		bMint := TRUE;
+		bCorking := FALSE;
+		
+		(* transition *)
+		IF fbTonStep3.Q THEN
+			nStep := 4;
+		END_IF
+		
+	4: (* attesa *)
+		bConveyor := FALSE;
+		bWater := FALSE;
+		bMint := TRUE;
+		bCorking := FALSE;
+		
+		(* transition *)
+		IF fbTonStep4.Q THEN
+			nStep := 5;
+		END_IF
+		
+	5: (* tappatura *)
+		bConveyor := FALSE;
+		bWater := FALSE;
+		bMint := FALSE;
+		bCorking := TRUE;
+		
+		(* transition *)
+		IF fbTonStep5.Q THEN
+			nStep := 6;
+		END_IF
+		
+	6: (* attesa *)
+		bConveyor := FALSE;
+		bWater := FALSE;
+		bMint := FALSE;
+		bCorking := FALSE;
+		
+		(* transition *)
+		IF fbTonStep6.Q THEN
+			nStep := 1;
+		END_IF
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_StateMachine">
+      <LineId Id="164" Count="2" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="168" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="102" Count="1" />
+      <LineId Id="113" Count="2" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="71" Count="2" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="77" Count="2" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="42" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="82" Count="2" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="46" Count="2" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="106" Count="2" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="60" Count="3" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="118" Count="2" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="50" Count="2" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="123" Count="2" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="66" Count="3" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="128" Count="2" />
+      <LineId Id="127" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="21" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

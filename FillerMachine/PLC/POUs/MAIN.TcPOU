@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{97e09f56-a846-45b7-b746-7c26db2ee647}" SpecialFunc="None">
+    <Declaration><![CDATA[(* -----------------------------------------------------------------------------
+| This sample has been supplied by Beckhoff As-Is and is intended only as an   |
+| example implementation. Functionality is not guaranteed.                     |
+----------------------------------------------------------------------------- *)
+
+PROGRAM MAIN
+VAR
+	fbStateMachine : FB_StateMachine;
+	fbVisuSim : FB_VisuSim;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* -----------------------------------------------------------------------------
+| This sample has been supplied by Beckhoff As-Is and is intended only as an   |
+| example implementation. Functionality is not guaranteed.                     |
+----------------------------------------------------------------------------- *)
+
+fbStateMachine(
+	bStart:= GVL.bStart, 
+	bStop:= GVL.bStop, 
+	bBottle:= GVL.bBottle,	 
+);
+
+GVL.bConveyor := fbStateMachine.bConveyor;
+GVL.bWater := fbStateMachine.bWater;
+GVL.bMint := fbStateMachine.bMint;	
+GVL.bCorking := fbStateMachine.bCorking;
+
+(* Visu and Simulation *)
+fbVisuSim(bConveyor:= GVL.bConveyor);
+GVL.bBottle := fbVisuSim.bBottle;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="27" Count="2" />
+      <LineId Id="25" Count="1" />
+      <LineId Id="7" Count="3" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="21" Count="3" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="38" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
