@@ -6,7 +6,6 @@ VAR_GLOBAL
 	//Input
 	bStart : BOOL;
 	bStop : BOOL;
-	bSensorLeft : BOOL;
 	bLimitLeft : BOOL;
 	bLimitRight : BOOL;
 	
