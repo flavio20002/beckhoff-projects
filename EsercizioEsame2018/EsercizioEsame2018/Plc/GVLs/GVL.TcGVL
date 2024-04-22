@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{a6c4ee90-e200-4b0b-bf67-f648e428f6e8}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	//input
+	bStart: BOOL;
+	bStop: BOOL;
+	bEmergenza: BOOL;
+	bPs1: BOOL;
+	bPs2: BOOL;
+	bPs3: BOOL;
+	bPs4: BOOL;
+	bSb1: BOOL;
+	bSb2: BOOL;
+	bSb3: BOOL;
+	rPeso: REAL; //Valore di tensione da 0V a 10V (0 Kg - 15 Kg)
+	
+	//output
+	bSpiaTensione: BOOL;
+	bSpiaFunzionamento: BOOL;
+	bSpiaInterventoRichiesto: BOOL;
+	pSpiaAnomalia: BOOL;
+	pSpiaEmergenza: BOOL;
+	bMotor1 : BOOL;
+	bMotor2 : BOOL;
+	bMotor3 : BOOL;
+	bMotor4 : BOOL;
+	bMotor5 : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
