@@ -1,23 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <GlobalTextList Name="GlobalTextList" Id="{328b9a1a-ee1a-4e0c-b688-b737eec62393}">
+  <GlobalTextList Name="GlobalTextList" Id="{dcca2202-319f-456c-b34a-ba1392399c4e}">
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalTextListObject">
           <l n="TextList" t="ArrayList" cet="TextListRow">
             <o>
-              <v n="TextID">"809"</v>
-              <v n="TextDefault">"%d"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
               <v n="TextID">"216"</v>
               <v n="TextDefault">"%f"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
-              <v n="TextID">"890"</v>
-              <v n="TextDefault">"%r"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -66,23 +56,8 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"273"</v>
-              <v n="TextDefault">"PEso "</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
-              <v n="TextID">"564"</v>
-              <v n="TextDefault">"Peso Prosciutto"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
               <v n="TextID">"388"</v>
               <v n="TextDefault">"PS1"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
-              <v n="TextID">"762"</v>
-              <v n="TextDefault">"Ps1"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -127,9 +102,9 @@
             </o>
           </l>
           <l n="Languages" t="ArrayList" />
-          <v n="GuidInit">{fac8306a-498e-46f6-a431-1062010a5a95}</v>
-          <v n="GuidReInit">{9d4b85b6-c679-4ed9-97e6-d406060260b9}</v>
-          <v n="GuidExitX">{e4c911a0-8af8-4bea-b919-343fa3209af3}</v>
+          <v n="GuidInit">{be6ebe01-ec49-4052-b4dd-3778e1a0e5df}</v>
+          <v n="GuidReInit">{9e9bf324-41d8-44d1-a379-b12884bcda27}</v>
+          <v n="GuidExitX">{3497d593-fb2f-447c-957b-de3792b3e103}</v>
         </o>
       </Data>
       <TypeList>
