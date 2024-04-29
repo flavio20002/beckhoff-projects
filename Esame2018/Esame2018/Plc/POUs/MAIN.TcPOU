@@ -3476,7 +3476,7 @@ GestioneSmistamento();]]></ST>
                           <v n="Extensible">false</v>
                         </o>
                         <o n="RValue" t="BoxTreeBox">
-                          <v n="BoxType">"OR"</v>
+                          <v n="BoxType">"AND"</v>
                           <o n="Instance" t="Operand">
                             <n n="Operand" />
                             <v n="Type">""</v>
@@ -3491,7 +3491,7 @@ GestioneSmistamento();]]></ST>
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
                             <v n="IsInstance">true</v>
-                            <v n="Id">98L</v>
+                            <v n="Id">106L</v>
                           </o>
                           <o n="OutputItems" t="OutputItemList">
                             <l2 n="OutputItems" />
@@ -3504,7 +3504,7 @@ GestioneSmistamento();]]></ST>
                           <n n="InputFlags" />
                           <l2 n="InputItems">
                             <o t="BoxTreeBox">
-                              <v n="BoxType">"AND"</v>
+                              <v n="BoxType">"OR"</v>
                               <o n="Instance" t="Operand">
                                 <n n="Operand" />
                                 <v n="Type">""</v>
@@ -3519,7 +3519,7 @@ GestioneSmistamento();]]></ST>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
                                 <v n="IsInstance">true</v>
-                                <v n="Id">68L</v>
+                                <v n="Id">98L</v>
                               </o>
                               <o n="OutputItems" t="OutputItemList">
                                 <l2 n="OutputItems" />
@@ -3531,27 +3531,8 @@ GestioneSmistamento();]]></ST>
                               </o>
                               <n n="InputFlags" />
                               <l2 n="InputItems">
-                                <o t="BoxTreeOperand">
-                                  <o n="Operand" t="Operand">
-                                    <v n="Operand">"AttivaMicroRulli"</v>
-                                    <v n="Type">"BOOL"</v>
-                                    <v n="Comment">""</v>
-                                    <v n="SymbolComment">""</v>
-                                    <v n="Address">""</v>
-                                    <o n="Flags" t="Flags">
-                                      <v n="Flags">0</v>
-                                      <v n="Fixed">true</v>
-                                      <v n="Extensible">false</v>
-                                    </o>
-                                    <v n="LValue">false</v>
-                                    <v n="Boolean">true</v>
-                                    <v n="IsInstance">false</v>
-                                    <v n="Id">67L</v>
-                                  </o>
-                                  <v n="Id">66L</v>
-                                </o>
                                 <o t="BoxTreeBox">
-                                  <v n="BoxType">"OR"</v>
+                                  <v n="BoxType">"AND"</v>
                                   <o n="Instance" t="Operand">
                                     <n n="Operand" />
                                     <v n="Type">""</v>
@@ -3566,7 +3547,7 @@ GestioneSmistamento();]]></ST>
                                     <v n="LValue">false</v>
                                     <v n="Boolean">false</v>
                                     <v n="IsInstance">true</v>
-                                    <v n="Id">72L</v>
+                                    <v n="Id">68L</v>
                                   </o>
                                   <o n="OutputItems" t="OutputItemList">
                                     <l2 n="OutputItems" />
@@ -3577,10 +3558,10 @@ GestioneSmistamento();]]></ST>
                                     <v n="Extensible">false</v>
                                   </o>
                                   <n n="InputFlags" />
-                                  <l2 n="InputItems" cet="BoxTreeOperand">
-                                    <o>
+                                  <l2 n="InputItems">
+                                    <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"GVL.PS2"</v>
+                                        <v n="Operand">"AttivaMicroRulli"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -3593,47 +3574,111 @@ GestioneSmistamento();]]></ST>
                                         <v n="LValue">false</v>
                                         <v n="Boolean">true</v>
                                         <v n="IsInstance">false</v>
-                                        <v n="Id">71L</v>
+                                        <v n="Id">67L</v>
                                       </o>
-                                      <v n="Id">70L</v>
+                                      <v n="Id">66L</v>
                                     </o>
-                                    <o>
-                                      <o n="Operand" t="Operand">
-                                        <v n="Operand">"GVL.PS3"</v>
-                                        <v n="Type">"BOOL"</v>
+                                    <o t="BoxTreeBox">
+                                      <v n="BoxType">"OR"</v>
+                                      <o n="Instance" t="Operand">
+                                        <n n="Operand" />
+                                        <v n="Type">""</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
                                         <v n="Address">""</v>
                                         <o n="Flags" t="Flags">
                                           <v n="Flags">0</v>
-                                          <v n="Fixed">true</v>
+                                          <v n="Fixed">false</v>
                                           <v n="Extensible">false</v>
                                         </o>
                                         <v n="LValue">false</v>
-                                        <v n="Boolean">true</v>
-                                        <v n="IsInstance">false</v>
-                                        <v n="Id">75L</v>
+                                        <v n="Boolean">false</v>
+                                        <v n="IsInstance">true</v>
+                                        <v n="Id">72L</v>
                                       </o>
-                                      <v n="Id">74L</v>
-                                    </o>
-                                    <o>
-                                      <o n="Operand" t="Operand">
-                                        <v n="Operand">"GVL.PS4"</v>
-                                        <v n="Type">"BOOL"</v>
-                                        <v n="Comment">""</v>
-                                        <v n="SymbolComment">""</v>
-                                        <v n="Address">""</v>
-                                        <o n="Flags" t="Flags">
-                                          <v n="Flags">0</v>
-                                          <v n="Fixed">true</v>
-                                          <v n="Extensible">false</v>
+                                      <o n="OutputItems" t="OutputItemList">
+                                        <l2 n="OutputItems" />
+                                      </o>
+                                      <o n="Flags" t="Flags">
+                                        <v n="Flags">0</v>
+                                        <v n="Fixed">false</v>
+                                        <v n="Extensible">false</v>
+                                      </o>
+                                      <n n="InputFlags" />
+                                      <l2 n="InputItems" cet="BoxTreeOperand">
+                                        <o>
+                                          <o n="Operand" t="Operand">
+                                            <v n="Operand">"GVL.PS2"</v>
+                                            <v n="Type">"BOOL"</v>
+                                            <v n="Comment">""</v>
+                                            <v n="SymbolComment">""</v>
+                                            <v n="Address">""</v>
+                                            <o n="Flags" t="Flags">
+                                              <v n="Flags">0</v>
+                                              <v n="Fixed">true</v>
+                                              <v n="Extensible">false</v>
+                                            </o>
+                                            <v n="LValue">false</v>
+                                            <v n="Boolean">true</v>
+                                            <v n="IsInstance">false</v>
+                                            <v n="Id">71L</v>
+                                          </o>
+                                          <v n="Id">70L</v>
                                         </o>
-                                        <v n="LValue">false</v>
-                                        <v n="Boolean">true</v>
-                                        <v n="IsInstance">false</v>
-                                        <v n="Id">77L</v>
+                                        <o>
+                                          <o n="Operand" t="Operand">
+                                            <v n="Operand">"GVL.PS3"</v>
+                                            <v n="Type">"BOOL"</v>
+                                            <v n="Comment">""</v>
+                                            <v n="SymbolComment">""</v>
+                                            <v n="Address">""</v>
+                                            <o n="Flags" t="Flags">
+                                              <v n="Flags">0</v>
+                                              <v n="Fixed">true</v>
+                                              <v n="Extensible">false</v>
+                                            </o>
+                                            <v n="LValue">false</v>
+                                            <v n="Boolean">true</v>
+                                            <v n="IsInstance">false</v>
+                                            <v n="Id">75L</v>
+                                          </o>
+                                          <v n="Id">74L</v>
+                                        </o>
+                                        <o>
+                                          <o n="Operand" t="Operand">
+                                            <v n="Operand">"GVL.PS4"</v>
+                                            <v n="Type">"BOOL"</v>
+                                            <v n="Comment">""</v>
+                                            <v n="SymbolComment">""</v>
+                                            <v n="Address">""</v>
+                                            <o n="Flags" t="Flags">
+                                              <v n="Flags">0</v>
+                                              <v n="Fixed">true</v>
+                                              <v n="Extensible">false</v>
+                                            </o>
+                                            <v n="LValue">false</v>
+                                            <v n="Boolean">true</v>
+                                            <v n="IsInstance">false</v>
+                                            <v n="Id">77L</v>
+                                          </o>
+                                          <v n="Id">76L</v>
+                                        </o>
+                                      </l2>
+                                      <o n="InputParam" t="ParamList">
+                                        <l2 n="Names" />
+                                        <l2 n="Types" />
                                       </o>
-                                      <v n="Id">76L</v>
+                                      <o n="OutputParam" t="ParamList">
+                                        <l2 n="Names" />
+                                        <l2 n="Types" />
+                                      </o>
+                                      <v n="CallType" t="Operator">Or</v>
+                                      <n n="EN" />
+                                      <n n="ENO" />
+                                      <n n="STSnippet" />
+                                      <v n="ContainsExtensibleInputs">false</v>
+                                      <v n="ProvidesSTSnippet">false</v>
+                                      <v n="Id">73L</v>
                                     </o>
                                   </l2>
                                   <o n="InputParam" t="ParamList">
@@ -3644,13 +3689,32 @@ GestioneSmistamento();]]></ST>
                                     <l2 n="Names" />
                                     <l2 n="Types" />
                                   </o>
-                                  <v n="CallType" t="Operator">Or</v>
+                                  <v n="CallType" t="Operator">And</v>
                                   <n n="EN" />
                                   <n n="ENO" />
                                   <n n="STSnippet" />
                                   <v n="ContainsExtensibleInputs">false</v>
                                   <v n="ProvidesSTSnippet">false</v>
-                                  <v n="Id">73L</v>
+                                  <v n="Id">69L</v>
+                                </o>
+                                <o t="BoxTreeOperand">
+                                  <o n="Operand" t="Operand">
+                                    <v n="Operand">"RuotaOrigine"</v>
+                                    <v n="Type">"BOOL"</v>
+                                    <v n="Comment">""</v>
+                                    <v n="SymbolComment">""</v>
+                                    <v n="Address">""</v>
+                                    <o n="Flags" t="Flags">
+                                      <v n="Flags">0</v>
+                                      <v n="Fixed">true</v>
+                                      <v n="Extensible">false</v>
+                                    </o>
+                                    <v n="LValue">false</v>
+                                    <v n="Boolean">true</v>
+                                    <v n="IsInstance">false</v>
+                                    <v n="Id">101L</v>
+                                  </o>
+                                  <v n="Id">100L</v>
                                 </o>
                               </l2>
                               <o n="InputParam" t="ParamList">
@@ -3661,32 +3725,32 @@ GestioneSmistamento();]]></ST>
                                 <l2 n="Names" />
                                 <l2 n="Types" />
                               </o>
-                              <v n="CallType" t="Operator">And</v>
+                              <v n="CallType" t="Operator">Or</v>
                               <n n="EN" />
                               <n n="ENO" />
                               <n n="STSnippet" />
                               <v n="ContainsExtensibleInputs">false</v>
                               <v n="ProvidesSTSnippet">false</v>
-                              <v n="Id">69L</v>
+                              <v n="Id">99L</v>
                             </o>
                             <o t="BoxTreeOperand">
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"RuotaOrigine"</v>
+                                <v n="Operand">"FineSmistamento"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Flags">0</v>
+                                  <v n="Flags">1</v>
                                   <v n="Fixed">true</v>
                                   <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">true</v>
                                 <v n="IsInstance">false</v>
-                                <v n="Id">101L</v>
+                                <v n="Id">109L</v>
                               </o>
-                              <v n="Id">100L</v>
+                              <v n="Id">108L</v>
                             </o>
                           </l2>
                           <o n="InputParam" t="ParamList">
@@ -3697,13 +3761,13 @@ GestioneSmistamento();]]></ST>
                             <l2 n="Names" />
                             <l2 n="Types" />
                           </o>
-                          <v n="CallType" t="Operator">Or</v>
+                          <v n="CallType" t="Operator">And</v>
                           <n n="EN" />
                           <n n="ENO" />
                           <n n="STSnippet" />
                           <v n="ContainsExtensibleInputs">false</v>
                           <v n="ProvidesSTSnippet">false</v>
-                          <v n="Id">99L</v>
+                          <v n="Id">107L</v>
                         </o>
                         <v n="Id">79L</v>
                       </o>
