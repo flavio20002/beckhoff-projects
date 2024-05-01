@@ -7765,6 +7765,14 @@
                       <v n="Id">3560616238L</v>
                       <v n="Value">"VISU.posizioneProsciutto"</v>
                     </o>
+                    <o>
+                      <v n="Id">2858320360L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">2738717112L</v>
+                      <v n="Value">"VISU.posizioneProsciuttoY"</v>
+                    </o>
                   </l>
                 </o>
                 <v n="VisualElementName">"Image"</v>

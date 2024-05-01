@@ -2946,7 +2946,7 @@ GestioneSmistamento();]]></ST>
                           <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"RuotaOrigine"</v>
+                                <v n="Operand">"ProsciuttoSmistato"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
