@@ -35,9 +35,15 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\VISU.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="VISUs\Visualization.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Gestore di visualizzazione.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VisuTask.TcTTO">
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
