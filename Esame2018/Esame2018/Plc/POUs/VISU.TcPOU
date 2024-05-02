@@ -6,18 +6,21 @@ VAR
 	posizioneProsciutto: INT;
 	posizioneProsciuttoY: INT;
 	rotazionePiattaforma: INT;
+	prosciuttoVisibile: BOOL;
 	Random: DRAND;
 	PB1Trig: R_TRIG;
 	SmistamentoTrig: F_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Random(Seed:= 100);
-PB1Trig(CLK := GVL.PB1);
-SmistamentoTrig(CLK := MAIN.Smistamento);
+      <ST><![CDATA[Random(Seed:= 100); //Numero casuale
+PB1Trig(CLK := GVL.PB1); //Fronte di salita del pulsante
+SmistamentoTrig(CLK := MAIN.Smistamento); //Indica quando termina uno smistamento
 
+//Reset posizione alla fine dello smistamento o alla pressione di Start
 IF PB1Trig.Q OR SmistamentoTrig.Q THEN
 	GVL.LC1 := Random.Num * 10;
+	prosciuttoVisibile := TRUE;
 	posizioneProsciutto := 0;
 	posizioneProsciuttoY := 0;
 	rotazionePiattaforma := 0;
@@ -29,7 +32,7 @@ IF GVL.M1 THEN
 END_IF
 
 IF GVL.M5 AND rotazionePiattaforma = 0 THEN
-	posizioneProsciutto := posizioneProsciutto +2;
+	posizioneProsciutto := posizioneProsciutto +4;
 END_IF
 
 IF GVL.M5 AND rotazionePiattaforma = 90 THEN
@@ -46,20 +49,23 @@ ELSE
 	GVL.PS1 := FALSE;
 END_IF
 
-IF posizioneProsciutto >= 320 THEN
+IF posizioneProsciutto >= 350 THEN
 	GVL.PS3 := TRUE;
+	prosciuttoVisibile:= FALSE;
 ELSE
 	GVL.PS3 := FALSE;
 END_IF
 
-IF posizioneProsciuttoY >= 160 THEN
+IF posizioneProsciuttoY >= 200 THEN
 	GVL.PS2 := TRUE;
+	prosciuttoVisibile:= FALSE;
 ELSE
 	GVL.PS2 := FALSE;
 END_IF
 
-IF posizioneProsciuttoY <= -160 THEN
+IF posizioneProsciuttoY <= -200 THEN
 	GVL.PS4 := TRUE;
+	prosciuttoVisibile:= FALSE;
 ELSE
 	GVL.PS4 := FALSE;
 END_IF
@@ -97,9 +103,11 @@ END_CASE
       <LineId Id="67" Count="0" />
       <LineId Id="70" Count="0" />
       <LineId Id="84" Count="0" />
-      <LineId Id="58" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="133" Count="0" />
       <LineId Id="57" Count="0" />
       <LineId Id="59" Count="0" />
+      <LineId Id="129" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="107" Count="0" />
       <LineId Id="65" Count="0" />
@@ -115,11 +123,17 @@ END_CASE
       <LineId Id="108" Count="0" />
       <LineId Id="78" Count="4" />
       <LineId Id="77" Count="0" />
-      <LineId Id="91" Count="4" />
+      <LineId Id="91" Count="2" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="94" Count="1" />
       <LineId Id="90" Count="0" />
-      <LineId Id="102" Count="4" />
+      <LineId Id="102" Count="2" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="105" Count="1" />
       <LineId Id="101" Count="0" />
-      <LineId Id="113" Count="5" />
+      <LineId Id="113" Count="2" />
+      <LineId Id="132" Count="0" />
+      <LineId Id="116" Count="2" />
       <LineId Id="112" Count="0" />
       <LineId Id="14" Count="3" />
       <LineId Id="22" Count="2" />

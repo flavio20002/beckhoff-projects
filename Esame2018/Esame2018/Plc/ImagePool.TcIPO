@@ -4,23 +4,28 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="ImagePoolObject">
-          <v n="UniqueIdGenerator">"4"</v>
+          <v n="UniqueIdGenerator">"8"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"ham"</v>
               <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|ham.png"</v>
-              <v n="ItemID">1</v>
+              <v n="ItemID">5</v>
+            </o>
+            <o>
+              <v n="BitmapID">"pulsante"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|pulsante.png"</v>
+              <v n="ItemID">6</v>
             </o>
             <o>
               <v n="BitmapID">""</v>
               <v n="FileID">""</v>
-              <v n="ItemID">2</v>
+              <v n="ItemID">7</v>
             </o>
           </l>
           <v n="GuidInit">{f64ac4f7-1f5d-497d-bd12-92d3aa2bef57}</v>
           <v n="GuidReInit">{93bc156b-5855-4b53-a97c-0803edcad8c5}</v>
           <v n="GuidExitX">{d1047b93-6f6a-4cee-9abe-00e8d7f56372}</v>
-          <v n="ValidIds">false</v>
+          <v n="ValidIds">true</v>
         </o>
       </Data>
       <TypeList>

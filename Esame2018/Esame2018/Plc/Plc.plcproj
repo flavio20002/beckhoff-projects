@@ -117,6 +117,14 @@
       <SubType>Content</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ham.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="pulsante.png">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
