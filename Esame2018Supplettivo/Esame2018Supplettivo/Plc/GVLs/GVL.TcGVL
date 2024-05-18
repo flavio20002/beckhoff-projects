@@ -4,32 +4,32 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	//input
-	PB1: BOOL;
-	PB2: BOOL;
-	PBE: BOOL;
-	PS1: BOOL;
-	PS2: BOOL;
-	PS3: BOOL;
-	PS4: BOOL;
-	PS5: BOOL;
-	CS_BIANCO: BOOL;
-	CS_NERO: BOOL;
+	PB1: BOOL; //Pulsante di start NA
+	PB2: BOOL; //Pulsante di stop NC
+	PBE: BOOL; //Pulsante di emergenza NC
+	PS1: BOOL; //Fotocellula
+	PS2: BOOL; //Fotocellula
+	PS3: BOOL; //Fotocellula
+	PS4: BOOL; //Fotocellula
+	PS5: BOOL; //Fotocellula
+	CS_BIANCO: BOOL; //Colore bianco rilevato
+	CS_NERO: BOOL; //Colore nero rilevato
 	
 	//output
-	L1: BOOL;
-	L2: BOOL;
-	L3: BOOL;
-	L4: BOOL;
-	L5: BOOL;
-	M1 : BOOL;
-	M2 : BOOL;
-	M3 : BOOL;
-	M4 : BOOL;
-	M5 : BOOL;
-	P1 : BOOL;
-	P2 : BOOL;
-	P3 : BOOL;
-	P4 : BOOL;
+	L1: BOOL; //Luce di segnalazione bianca
+	L2: BOOL; //Luce di segnalazione verde
+	L3: BOOL; //Luce di segnalazione blue
+	L4: BOOL; //Luce di segnalazione gialla
+	L5: BOOL; //Luce di segnalazione rossa
+	M1 : BOOL; //Motore nastro 1
+	M2 : BOOL; //Motore nastro 2
+	M3 : BOOL; //Motore discesa mandrino
+	M4 : BOOL; //MOtore risalita mandrino
+	M5 : BOOL; //Punta del trapano
+	P1 : BOOL; //Pistone posizione intermedia
+	P2 : BOOL; //Pistone posizione finale
+	P3 : BOOL; //Pistone timbratura
+	P4 : BOOL; //Pistone blocco pezzo
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
