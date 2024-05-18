@@ -24,11 +24,12 @@ VAR_GLOBAL
 	M1 : BOOL;
 	M2 : BOOL;
 	M3 : BOOL;
+	M4 : BOOL;
+	M5 : BOOL;
 	P1 : BOOL;
 	P2 : BOOL;
 	P3 : BOOL;
 	P4 : BOOL;
-	P5 : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
