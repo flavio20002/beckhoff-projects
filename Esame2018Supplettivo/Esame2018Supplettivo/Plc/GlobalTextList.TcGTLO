@@ -41,6 +41,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"815"</v>
+              <v n="TextDefault">"contenitori"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"372"</v>
               <v n="TextDefault">"CS_BIANCO"</v>
               <l n="LanguageTexts" t="ArrayList" />
