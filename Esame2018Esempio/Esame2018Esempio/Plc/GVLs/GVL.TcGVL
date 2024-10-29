@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{a6c4ee90-e200-4b0b-bf67-f648e428f6e8}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	//input
+	PB1: BOOL; //Pulsante di start NA
+	PB2: BOOL; //Pulsante di stop NC
+	PBE: BOOL; //Pulsante di emergenza NC
+	PS1: BOOL; //Fotocellula
+	PS2: BOOL; //Fotocellula
+	PS3: BOOL; //Fotocellula
+	PS4: BOOL; //Fotocellula
+	SB1: BOOL; //Finecorsa del sigillatore
+
+	LS1: REAL; //Distanza misurata dal sensore laser [Volt]
+	
+	//output
+	L1: BOOL; //Luce di segnalazione bianca
+	L2: BOOL; //Luce di segnalazione verde
+	L3: BOOL; //Luce di segnalazione blue
+	L4: BOOL; //Luce di segnalazione gialla
+	L5: BOOL; //Luce di segnalazione rossa
+	M1 : BOOL; //Motore nastro 1
+	M2 : BOOL; //Motore nastro 2
+
+	P1 : BOOL; //Pistone sigillatore
+	P2 : BOOL; //Pistone smistamento
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
