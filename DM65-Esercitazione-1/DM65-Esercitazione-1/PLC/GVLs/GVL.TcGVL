@@ -3,6 +3,23 @@
   <GVL Name="GVL" Id="{bb0c83e5-da50-46c2-b200-b3c47f3fa699}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
+	//Input
+	bUltrasonicSensor: BOOL;
+	bUpperLimitSwitch: BOOL;
+	bLowerLimitSwitch: BOOL;
+	bPhotocell: BOOL;
+	
+	//Output
+	nMotorPosition: REAL;
+	bMotorUp: BOOL;
+	bMotorDown: BOOL;
+	
+	//Internal
+	axis: AXIS_REF;
+	bTimeExpired: BOOL;
+	fBJog: MC_Jog;
+	fBPower: MC_Power;
+	fBTon: TON;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
