@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_StateMachine" Id="{e5816da5-9d48-4cc9-a5b5-8004a7c5ec6a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_StateMachine
+VAR_INPUT
+	bUltrasonicSensor: BOOL;
+	bUpperLimitSwitch: BOOL;
+	bLowerLimitSwitch: BOOL;
+	bPhotocell: BOOL;
+END_VAR
+VAR_OUTPUT
+	bMotorUp: BOOL;
+	bMotorDown: BOOL;
+END_VAR
+VAR
+	bTimeExpired: BOOL;
+	fBTon: TON;
+	state : E_States;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE state OF
+	E_States.eClosed:
+		bMotorUp := FALSE;
+		bMotorDown := FALSE;
+		IF bUltrasonicSensor THEN
+			state:= E_States.eOpening;
+		END_IF
+	
+	E_States.eOpening:
+		bMotorUp := TRUE;
+		bMotorDown := FALSE;
+		IF bUpperLimitSwitch THEN
+			state:= E_States.eOpened;
+		END_IF
+
+	E_States.eOpened:
+		fBTon(IN := NOT bPhotocell AND NOT bUltrasonicSensor , PT:=T#5S , Q=>, ET=> );
+		bMotorUp := FALSE;
+		bMotorDown := FALSE;
+		IF fBTon.Q THEN
+			state:= E_States.eClosing;
+		END_IF
+	
+	E_States.eClosing:
+		fBTon(IN := FALSE);
+		bMotorUp := FALSE;
+		bMotorDown := TRUE;
+		IF bPhotocell OR bUltrasonicSensor THEN
+			state:= E_States.eOpening;
+		ELSIF bLowerLimitSwitch THEN
+			state:= E_States.eClosed;
+		END_IF
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_StateMachine">
+      <LineId Id="47" Count="1" />
+      <LineId Id="50" Count="2" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="58" Count="2" />
+      <LineId Id="62" Count="4" />
+      <LineId Id="79" Count="1" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="82" Count="3" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="67" Count="1" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="70" Count="1" />
+      <LineId Id="96" Count="1" />
+      <LineId Id="91" Count="1" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

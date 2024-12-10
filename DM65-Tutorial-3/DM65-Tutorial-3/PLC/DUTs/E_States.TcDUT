@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="E_States" Id="{1eb6927a-626f-40da-8c29-cd9ddfeb5cca}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_States :
+(
+	eClosed := 0,
+	eOpened,
+	eOpening,
+	eClosing
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{cf06fab0-50be-4076-8593-c6c9abf49c38}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	StateMachine: FB_StateMachine;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Invoco macchina a stati
+StateMachine(bUltrasonicSensor:= GVL.bUltrasonicSensor, bUpperLimitSwitch:= GVL.bUpperLimitSwitch, bLowerLimitSwitch:= GVL.bLowerLimitSwitch, bPhotocell:= GVL.bPhotocell );
+//Scrittura variabili Output
+GVL.bMotorUp := StateMachine.bMotorUp;
+GVL.bMotorDown := StateMachine.bMotorDown;
+GVL.nMotorPosition := GVL.axis.NcToPlc.ActPos;
+//Movimentazione motore
+GVL.fBPower(Axis:=GVL.axis, Enable:=TRUE, Enable_Positive:= GVL.bMotorUp, Enable_Negative:= GVL.bMotorDown, Override:=100);
+GVL.fBJog(Axis:=GVL.axis, JogForward:= GVL.bMotorUp, JogBackwards:= GVL.bMotorDown, Velocity:=100);
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="14" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="8" Count="1" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

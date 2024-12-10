@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{1ff3f54c-f0eb-4d1f-b3a7-cb608df7532b}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	//Input
+	bUltrasonicSensor: BOOL;
+	bUpperLimitSwitch: BOOL;
+	bLowerLimitSwitch: BOOL;
+	bPhotocell: BOOL;
+	//Output
+	nMotorPosition: LREAL;
+	bMotorUp: BOOL;
+	bMotorDown: BOOL;
+	//Internal
+	axis: AXIS_REF;
+	fBJog: MC_Jog;
+	fBPower: MC_Power;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
