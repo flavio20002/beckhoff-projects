@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <GVL Name="GVL" Id="{1ff3f54c-f0eb-4d1f-b3a7-cb608df7532b}">
+  <GVL Name="GVL" Id="{bb0c83e5-da50-46c2-b200-b3c47f3fa699}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	//Input
-	bUltrasonicSensor AT %I*: BOOL;
-	bUpperLimitSwitch: BOOL;
-	bLowerLimitSwitch: BOOL;
-	bPhotocell AT %I*: BOOL;
+	bStartButton: BOOL;
+	bStopButton: BOOL;
+	
 	//Output
-	nMotorPosition: LREAL;
-	bMotorUp AT %Q*: BOOL;
-	bMotorDown AT %Q*: BOOL;
+	nMotorPosition: REAL;
+	bMotorEnabled: BOOL;
+	bMotorForward: BOOL;
+	bMotorBackwards: BOOL;
+	
 	//Internal
 	axis: AXIS_REF;
 	fBJog: MC_Jog;

@@ -13,7 +13,6 @@ VAR_OUTPUT
 	bMotorDown: BOOL;
 END_VAR
 VAR
-	bTimeExpired: BOOL;
 	fBTon: TON;
 	state : E_States;
 END_VAR]]></Declaration>
@@ -34,7 +33,10 @@ END_VAR]]></Declaration>
 		END_IF
 
 	E_States.eOpened:
-		fBTon(IN := NOT bPhotocell AND NOT bUltrasonicSensor , PT:=T#5S , Q=>, ET=> );
+		fBTon(IN := NOT bPhotocell AND NOT bUltrasonicSensor , 
+			  PT:=T#5S, 
+			  Q=>,
+			  ET=>);
 		bMotorUp := FALSE;
 		bMotorDown := FALSE;
 		IF fBTon.Q THEN
@@ -60,6 +62,7 @@ END_CASE]]></ST>
       <LineId Id="62" Count="4" />
       <LineId Id="79" Count="1" />
       <LineId Id="86" Count="0" />
+      <LineId Id="99" Count="2" />
       <LineId Id="82" Count="3" />
       <LineId Id="78" Count="0" />
       <LineId Id="67" Count="1" />
