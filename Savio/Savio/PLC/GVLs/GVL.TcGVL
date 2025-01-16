@@ -5,9 +5,11 @@
 VAR_GLOBAL
 	bStartButton: BOOL;
 	bStopButton: BOOL;
+	fVelocity: REAL;
+	fAccelleration: REAL;
 	
 	//Output
-	nMotorPosition: REAL;
+	nMotorPosition: LREAL;
 	bMotorEnabled: BOOL;
 	bMotorForward: BOOL;
 	bMotorBackwards: BOOL;

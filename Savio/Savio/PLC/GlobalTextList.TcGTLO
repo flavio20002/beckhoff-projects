@@ -16,6 +16,26 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"426"</v>
+              <v n="TextDefault">"Accelerazione attuale [mm/s]"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"676"</v>
+              <v n="TextDefault">"Accelerazione attuale [mm/s^2]"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"581"</v>
+              <v n="TextDefault">"Accelerazione [mm/s^2]"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"945"</v>
+              <v n="TextDefault">"Posizione [mm]"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"294"</v>
               <v n="TextDefault">"START"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -23,6 +43,21 @@
             <o>
               <v n="TextID">"404"</v>
               <v n="TextDefault">"STOP"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"834"</v>
+              <v n="TextDefault">"Velocità"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"781"</v>
+              <v n="TextDefault">"Velocità attuale [mm/s]"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"370"</v>
+              <v n="TextDefault">"Velocità [mm/s]"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>

@@ -828,7 +828,7 @@ Motore();]]></ST>
                           </o>
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"MC_JOGMODE_CONTINOUS"</v>
+                              <v n="Operand">"E_JogMode.MC_JOGMODE_CONTINOUS"</v>
                               <v n="Type">"E_JOGMODE"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -866,8 +866,8 @@ Motore();]]></ST>
                           </o>
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"1500"</v>
-                              <v n="Type">"INT"</v>
+                              <v n="Operand">"GVL.fVelocity"</v>
+                              <v n="Type">"REAL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -885,8 +885,8 @@ Motore();]]></ST>
                           </o>
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"500"</v>
-                              <v n="Type">"INT"</v>
+                              <v n="Operand">"GVL.fAccelleration"</v>
+                              <v n="Type">"REAL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1028,7 +1028,7 @@ Motore();]]></ST>
                             <n />
                             <o>
                               <v n="Operand">"GVL.nMotorPosition"</v>
-                              <v n="Type">"REAL"</v>
+                              <v n="Type">"LREAL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
